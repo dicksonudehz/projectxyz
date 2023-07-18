@@ -1,0 +1,43 @@
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+
+.cardContentContainer {
+    padding-top: 50px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cardContentImage {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.cardContentContainer:hover{
+    /* width: 380px; */
+    transition:  1s all ease;
+    transform: scale(1.1);
+    
+}
+
+.cardContent {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(30, 19, 56);
+  font-size: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  /* top: 100px; */
+}

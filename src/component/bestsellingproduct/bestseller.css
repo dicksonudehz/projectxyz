@@ -1,0 +1,176 @@
+.bestSellerProdContainer{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.bestSellerProdConLeft{
+    flex: 3;
+    /* position: relative; */
+}
+.bestSellerContentCon{
+    position: relative;
+    background-color: black;
+}
+.proBestSellerImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-blend-mode: overlay;
+}
+.bestSellerContentConItems{
+    position: absolute;
+    top: 0;
+    margin-top: 30px;
+    margin-left: 20px;
+   
+}
+.bestSellerContentConItems p{
+    color: rgb(230, 230, 230);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.bestSellerContentConItems h1{
+    text-transform: capitalize;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+.orderNowButton{
+    margin-top: 20px;
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.bestSellerProdConRight{
+    flex: 9;
+    margin-left: 25px;
+}
+.bestSellerProdRightHeaderCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+
+}
+.bestSelletProdHeaderLeft{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.bestSelletProdHeaderLeft h1{
+    /* padding-left: 20px; */
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.bestSelletProdHeaderLeft ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.bestSelletProdHeaderLeft ul li{
+    list-style: none;
+    padding-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.navIconsRight{
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.bestSellerProdArrow{
+    cursor: pointer;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+.bestSellerProdContainerBottom{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.bestSellerProdInfo{
+    position: relative;
+    /* background-color: rgb(255, 255, 255); */
+    cursor: pointer;
+    margin-top: 30px;
+    justify-content: space-between;
+    padding-right: 10px;
+    width: 20%;
+    /* background-color: red; */
+}
+.bestSellerSearchIcon{
+    position: absolute;
+    bottom: 0;
+    left: 100;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+.searchIcon{
+    background-color: white;
+    font-size: 40px !important;
+    padding: 7px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding-top: 5px; 
+    color: black;
+}
+
+.bestSellerProductContentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.bestSellerprodImg{
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+}
+.bestSellerAddToCart{
+    background-color: rgb(48, 48, 68);
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.bestSellerProTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.bestSellerProdTitle{
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+}
+.bestSellerProdprice{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+}

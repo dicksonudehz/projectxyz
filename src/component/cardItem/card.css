@@ -1,0 +1,101 @@
+
+.cardContainerBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+  margin-bottom: 35%;
+
+}
+.cardContainerBottomUpItems {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #e7e7e7;
+  width: 20%;
+  padding-bottom: 40px;
+}
+.cardContainerTopItems {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+.discount {
+  background-color: rgb(255, 115, 0);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 30px;
+  color: white;
+}
+.productIconExplore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ProductIconExploreIcon {
+  color: grey;
+  font-size: 18px !important;
+}
+.cardContainerBottomItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImage {
+  width: 100%;
+  object-fit: cover;
+}
+.cardContainerBottomItemsHeader {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: rgb(128, 128, 128);
+}
+.cardPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.maxPrice {
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(155, 70, 0);
+}
+.operand {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgb(255, 115, 0);
+}
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.starContent{
+    color: rgb(255, 115, 0);
+    font-size: 14px !important;
+
+
+}

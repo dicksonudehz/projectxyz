@@ -1,0 +1,126 @@
+.relatedProductTitle{
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.relatedProductContainerItems{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.17);
+
+}
+.relatedProductContainer {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    width: 20%;
+    
+  }
+/* .relatedProductContainer:hover {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.17);
+    cursor: pointer;
+    margin-top: 15px;
+    justify-content: space-between;
+    width: 20%;
+    display: block;
+  } */
+   .activated{
+    position: relative;
+    background: grey;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    width: 50%;
+    display: block;
+  }
+  .relatedProsIcons {
+    position: absolute;
+    bottom: 0;
+    left: 100;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+  }
+  .relatedProsIcon {
+    background-color: white;
+    font-size: 30px !important;
+    padding: 5px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-top: 10px; 
+  }
+  
+  .relatedProdInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .relatedProdImage{
+      width: 100%;
+      object-fit: cover;
+  }
+  .addToCart{
+      background-color: rgb(48, 48, 68);
+      width: 100%;
+      padding: 10px 0px 10px 0px;
+      color: white;
+      text-transform: capitalize;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+  }
+  .relatedProdTitleCon{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+  }
+  .relatedProTitle {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .relatedProdPrice{
+      font-size: 12px;
+      text-align: center;
+      padding-top: 5px;
+  }
+  .productDescription{
+    background-color: white;
+    margin-top: 1px;
+    border-radius: 15;
+    padding: 15px;
+  }
+  .productTitle{
+    text-transform: capitalize;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .loremipsum{
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+  }

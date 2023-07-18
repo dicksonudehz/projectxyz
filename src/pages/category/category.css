@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.categoryContaienr {
+  display: flex;
+  flex-direction: column;
+}
+.breadcrumContainer {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.breadcrumImage {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  height: 250px;
+  z-index: -99999;
+}
+.breadcrumContent {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.breadcrumHeaderNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.arrowBack {
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.breadcrumContent h1 {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+  font-size: 35px;
+}
+.breadcrumContent ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-right: 150px;
+  margin-left: 150px;
+}
+.breadcrumContent ul li {
+  text-transform: capitalize;
+  padding: 10px;
+  color: white;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+.breadcrumContent ul li:hover {
+  color: grey;
+  cursor: pointer;
+  transition: 1s all ease;
+  /* border-bottom: 2px solid grey; */
+}
+.breadcrumNavContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+}
+.breadcrumLeftNav {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.breadcrumLeftItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.breadcrumLeftItems ul {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.breadcrumLeftItems ul li {
+  list-style: none;
+  padding-right: 10px;
+  cursor: pointer;
+  font-weight: 300;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+.breadcrumNavIcon {
+  font-size: 14px !important;
+}
+.breadcrumRightNav {
+  flex: 7;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+.breadcrumRightItems {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* background-color: red; */
+  width: 16%;
+  justify-content: space-around;
+  padding: 10px;
+}
+.breadcrumRightItems h5 {
+  font-weight: 300;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.appIcon{
+  color: grey;
+  cursor: pointer;
+}
+.breadcrumRightItems h1{
+  text-transform: capitalize;
+  font-size: 16px;
+  cursor: pointer;
+}
+.categoryProductContainerBottom{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* width: 100%; */
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid rgb(219, 219, 219);
+  padding-bottom: 20px;
+}
+.categoryproductItem{
+  width: 25%;
+  height: auto;
+  position: relative;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+} */
+.productItemImg{
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+ }
+.searchCategoryIcon{
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 0; 
+  right: 0;
+  margin-right: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 45px !important;
+  color: grey;
+
+}
+.categoryProd{
+  width: 100%;
+  /* position: absolute; */
+
+}
+.categoryAddtoCart{
+  background-color: rgb(48, 48, 68);
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.categoryCardTitle{
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
+  padding-top: 10px;
+}
+.categoryProductPrice{
+  font-size: 12px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
+}

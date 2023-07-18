@@ -1,0 +1,376 @@
+.salesProductCon {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+.salesProConLeft {
+  flex: 7.5;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  /* padding: 26px; */
+}
+
+.salesProConTopCon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #a1a1a1;
+  padding-bottom: 10px;
+}
+
+.salesProTopTitleItem {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+}
+
+/* .salesProSubTitle {
+  border-bottom: 2px solid #8a8a8a;
+  padding-bottom: 30px;
+} */
+.salesProSubTitle ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.salesProSubTitle ul li {
+  list-style: none;
+  padding-right: 20px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.salesProTopIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.salesIconLeft {
+  transform: rotate(180deg);
+  font-size: 30px !important;
+  color: #a0a0a0;
+  cursor: pointer;
+}
+.salesIconRight {
+  transform: rotate(180deg);
+  /* padding-left: 10px; */
+  font-size: 30px !important;
+  color: #a0a0a0;
+  cursor: pointer;
+}
+.mainProSalesContainer {
+  /* position: relative; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.saleProConLeftBottom {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin-top: 10px;
+  justify-content: space-between;
+  padding-right: 10px;
+  width: 33%;
+}
+.salesProConTop {
+  position: absolute;
+  bottom: 0;
+  left: 100;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+.salesProImg {
+  width: 100%;
+  object-fit: cover;
+}
+.salesAddToCart {
+  background-color: rgb(48, 48, 68);
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.salesProTopTitle h1 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  /* margin-top: 20px; */
+}
+.salesTitle {
+  text-align: center;
+  font-weight: normal;
+  margin-top: 10px;
+}
+.salesPrice {
+  font-size: 12px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.salesProContainerRight {
+  flex: 4.5;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center; */
+  padding-left: 30px;
+  padding-right: 30px;
+  /* padding-right: 50px; */
+  width: 100%;
+  border: 1px solid black;
+  position: relative;
+}
+.saleProdContainerContent {
+  background-color: rgb(243, 243, 243);
+  padding-bottom: 40px;
+}
+.salesProductConBottomRight {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  padding-bottom: 15px;
+  right: 0;
+  margin-top: 15px;
+  margin-right: 30px;
+}
+.salesProductConBottomRightCon {
+  position: absolute;
+  left: 0;
+  margin-top: 15px;
+  margin-left: 30px;
+  /* padding-right: 30px; */
+}
+.percentageBarge {
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(53, 53, 53);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+}
+.featuredBarge {
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(253, 122, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-transform: capitalize;
+  margin-top: 40px;
+  position: absolute;
+}
+.salesProIcon {
+  font-size: 40px !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.salesTopItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.salesProContTopTitle h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.salesProIcons {
+  padding-right: 20px;
+}
+.salesImage {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 40px;
+}
+.salesProConTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.salesProdName {
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: bold;
+}
+.priceContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.formalPrice {
+  text-decoration-line: line-through;
+  font-size: 14px;
+  font-weight: normal;
+}
+.currentPrice {
+  font-weight: bold;
+  font-size: 16;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.coverPopContainer{
+  background-color: rgba(0, 0, 1, 0.356);
+  position: absolute;
+  z-index: 9999999999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: auto;
+  flex: 7.5;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 35px;
+}
+.productModalContainer {
+  position: absolute;
+  background-color: rgb(240, 240, 240);
+  z-index: 9999999999;
+  width: 100%;
+  top: 20%;
+  left: 30%;
+  margin: auto;
+  flex: 7.5;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 35px;
+}
+
+.imgContainer{
+  background-color: white;
+  width: 45%;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.imgModel {
+  width: 100%;
+  object-fit: cover;
+}
+.imgAddToCart{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0px;
+  background-color: rgb(24, 24, 68);
+  outline: none;
+  cursor: pointer;
+}
+.productDescCont{
+  font-weight: normal;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.productDescCont p{
+  font-weight: normal;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.productCounter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10;
+  
+}
+ .counter{
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.substract{
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  cursor: pointer;
+}
+ .addition{
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  cursor: pointer;
+}
+.addCartCounter{
+  padding: 10px 40px;
+  background-color: rgb(30, 30, 97);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.shareProdSocialIcons{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.closeButton{
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: red;
+  padding: 10px;
+  cursor: pointer;
+}
+.closeButton:hover{
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: red;
+  padding: 10px;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: all 1s;
+}

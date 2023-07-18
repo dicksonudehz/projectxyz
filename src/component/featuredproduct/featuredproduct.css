@@ -1,0 +1,219 @@
+.featureProductContainer {
+  display: flex;
+  flex-direction: row;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-bottom: 60px;
+}
+.featuredProductContainerLeft {
+  flex: 4.5;
+  background-color: rgb(255, 255, 255);
+  border: 1px rgb(0, 0, 0) solid;
+  padding: 20px;
+  height: 100%;
+}
+.featuredProductContainerLeftTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.featuredProductContainerLeftTopTitle {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+.featureProductContainerTopIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.iconsRight {
+  color: rgb(158, 158, 158);
+  font-size: 20px !important;
+  transform: rotate(180deg);
+  margin-right: 10px;
+  cursor: pointer;
+}
+.iconsLeft {
+  color: rgb(158, 158, 158);
+  font-size: 20px !important;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+.featureProductConBottom {
+  background-color: rgb(238, 238, 238);
+  margin: 15px;
+ 
+}
+.featuredProductCon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+.featureProductConBottomLeft {
+  background-color: rgb(231, 95, 4);
+}
+.featureProductConTitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 5px;
+  color: white;
+}
+.featureProductConBottomRight {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  padding-bottom: 15px;
+  margin-right: 10px;
+}
+.featuredIcon {
+  padding-top: 10px;
+  font-size: 40px !important;
+  cursor: pointer;
+}
+.featureProConBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.featureProductImg{
+  width: 100%;
+  object-fit: cover;
+}
+.featuredProConTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  padding-top: 30px;
+}
+.ProTitle {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.prie {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.featuredContainerRight {
+  flex: 7.5;
+  background-color: rgb(255, 255, 255);
+  padding-left: 30px;
+  padding-right: 20px;
+  /* padding-top: -315px; */
+}
+.featureProRightTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #dddddd;
+  padding-bottom: 20px;
+}
+.featureProConTopLeftContainer ul {
+  display: flex;
+  flex-direction: row;
+}
+.featureProConTopLeftContainer ul li {
+  list-style: none;
+  padding-right: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+.featuredProConBottom {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mainProContainer {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin-top: 15px;
+  justify-content: space-between;
+  padding-right: 10px;
+  width: 33%;
+  display: block;
+}
+ .activated{
+  position: relative;
+  background: grey;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  width: 50%;
+  display: block;
+}
+.mainProIcons {
+  position: absolute;
+  bottom: 0;
+  left: 100;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+.mainProIcon {
+  background-color: white;
+  font-size: 50px !important;
+  padding: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-top: 10px; 
+}
+
+.mainProInfoCon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.proImg{
+    width: 100%;
+    object-fit: cover;
+}
+.addToCart{
+    background-color: rgb(48, 48, 68);
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.mainProTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.proTitle {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+.proPrice{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+}

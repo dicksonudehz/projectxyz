@@ -1,0 +1,96 @@
+.productAdContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.productAdLeft {
+  flex: 8;
+}
+.productAdImg {
+  width: 100%;
+  object-fit: cover;
+  height: 500px;
+}
+.productAdRight {
+  flex: 4;
+  position: relative;
+  background-color: rgb(241, 241, 241);
+}
+.productAdRightTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 30px;
+}
+.productAdTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.productAdArrow {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.proAdLeftArrow {
+  padding-left: 15px;
+  color: grey;
+  position: relative;
+  font-size: 35px !important;
+  cursor: pointer;
+}
+.proAdRightArrow {
+  padding-right: 15px;
+  color: grey;
+  position: relative;
+  font-size: 35px !important;
+  cursor: pointer;
+}
+.proAdRightTopSlideImage {
+  width: 64%;
+  object-fit: cover;
+  position: relative;
+}
+.productAdNavIcons {
+  position: relative;
+  background-color: white;
+  padding: 5px 30px 5px 30px;
+  top: -25px;
+  cursor: pointer;
+}
+.productAdNavIcon {
+  padding-left: 10px;
+  font-size: 40px !important;
+}
+.priceAd{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.productAdTile{
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: capitalize;
+  color: grey;
+  font-weight: bold;
+}
+.ProductAdPrice{
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: capitalize;
+  color: grey;
+  font-weight: normal;
+  padding-bottom: 20px;
+}

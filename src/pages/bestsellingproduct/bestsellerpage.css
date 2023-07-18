@@ -1,0 +1,128 @@
+.bestSellerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.bestSellerContainerLeft {
+  flex: 4;
+}
+.bestSellerLeftItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  z-index: 9999;
+  margin-left: 20px;
+margin-top: 30px;
+}
+.bestSellerLeftItems p {
+  text-transform: capitalize;
+}
+.bestSellerLeftItems h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-top: 10px;
+}
+.bestSellerImage {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+}
+.bestSellerContainerRight {
+  flex: 8;
+  margin-left: 40px;
+}
+.bestSellerRightTitleItems{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.bestSellerTitle{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 14px;
+}
+.bestSellerRightItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bestSellerItems ul{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.bestSellerItems ul li{
+    list-style: none;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.bestSellerProductContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.bestSellsProdItemContainer{
+    
+    width: 30%;
+    position: relative;
+    margin-top: 30px;
+
+}
+/* .bestSellerProdItem{
+    width: 40%;
+} */
+.BestSellerProduct{
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.searchBestSellerIcon{
+    position: absolute;
+    z-index: 9999;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    font-size: 40px !important;
+    background-color: white;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.bestSellerProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bestSellerAddtoCart{
+    background-color: rgb(48, 48, 68);
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.bestSellerTittle{
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    padding-top: 10px;
+}
+.bestSellerPrice{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+}

@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.singleProductContainer{
+    background-color: rgb(241, 241, 241);
+    padding: 0px 50px;
+}
+.singleProductBreadcrum{
+    padding: 10px 0px;
+}
+.singleProductBreadcrum ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.singleProductBreadcrum ul li{
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 400;
+    list-style: none;
+    padding-right: 10px;
+}
+.arrowForward{
+    font-size: 10px !important;
+}
+.productContentContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 50px;
+    padding-top: 5px;
+}
+.productContentContainerLeftItems{
+    flex: 9;
+    border-radius: 15px;
+    /* padding: 15px; */
+    display: flex;
+    flex-direction: column;
+    
+}
+.productContentContainerLeft{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.productImageDesc{
+    display: flex;
+    flex-direction: column;
+}
+.productContentItems{
+    width: 30%;
+    border-radius: 10px;
+}
+.productMainImage{
+    width: 100%;
+    object-fit: cover;
+}
+.productImageDescContainer{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.featureImageDesc{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.productFeatureImage{
+    width: 15%;
+    border: 1px solid rgb(168, 168, 168);
+    margin-right: 10px;
+}
+
+
+.shareProductSocials h1{
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 15px 0px;
+}
+.socialMediaIcon{
+    padding: 5px;
+    width: 100%;
+}
+.singleProductSocials1{
+    width: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 30px !important;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.singleProductSocials{
+    width: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 30px !important;
+    cursor: pointer;
+}
+.productDescContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+.prodDescTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.officalStore{
+    background-color: green;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: white;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.officialAniversiry{
+    background-color: rgb(0, 3, 202);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.productTitleDesc{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: black;
+}
+.prodDescIcon{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 400px;
+    cursor: pointer;
+}
+.productDescName{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.productDescPrice{
+    font-size: 20px;
+    margin: 5px 0px;
+}
+.inStock{
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+}
+.productShippingDetails{
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 5px 0px;
+}
+.productAddToCart{
+    width: 100%;
+    background-color: rgb(255, 174, 0);
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+.productPromoDetails h1{
+font-size: 18px;
+color: blue;
+font-weight: 500;
+
+}
+.productPromoDetails p{
+    padding-top: 5px;
+    font-size: 13px;
+    font-weight: 400;
+
+}
+.productContentContainerRight{
+    flex: 3;
+    background-color: white;
+    margin-left: 15px;
+    border-radius: 5;
+    display: flex;
+    flex-direction: column;
+}

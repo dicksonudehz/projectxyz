@@ -1,0 +1,59 @@
+.bodyContentContainer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+}
+.bodyContentContainerTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+.bodyContentContainerTop h1 {
+  color: grey;
+  font-size: 25px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.bodyContentContainerTop h5 {
+  color: grey;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 300;
+  padding-top: 10px;
+}
+.bodyContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px;
+}
+.bodyContentContainerLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bodyContentContainerLeft h1{
+    color: grey;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.bodyContentContainerLeft h5{
+    color: grey;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 300;
+    padding-top: 10px;
+    text-align: center;
+    line-height: 1.5;
+}
+.add-to-cart {
+  font-size: 70px !important;
+  color: rgb(194, 103, 0);
+}

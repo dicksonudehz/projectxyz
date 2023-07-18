@@ -1,0 +1,108 @@
+.productReelContainer{
+    widows: 100%;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.productHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2e2e2e;
+}
+.prodTitle{
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(78, 78, 78);
+}
+.productHeader ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.productHeader ul li{
+    text-decoration: none;
+    font-style: normal;
+    padding-left: 30px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
+    list-style: none;
+    color: rgb(78, 78, 78);
+}
+.mainProCardContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.prodCardContainer{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-top: 30px;
+    justify-content: space-between;
+    padding-right: 10px;
+    width: 20%;
+}
+.mainProCardIcons{
+    position: absolute;
+    bottom: 0;
+    left: 100;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+.mainProCardIcon{
+    background-color: white;
+    font-size: 50px !important;
+    padding: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-top: 10px; 
+}
+.mainProInfoCon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.mainProCardImg{
+    width: 100%;
+    object-fit: cover;
+}
+.prodCardAddToCard{
+    background-color: rgb(48, 48, 68);
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.prodCardTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.cardTitle{
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+.cardPrice{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
