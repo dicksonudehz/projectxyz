@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.adminDashboardContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right: 0px;
+}
+.adminLeftDashboardContainer{
+    flex: 3;
+    background-color: rgb(6, 34, 53);
+    padding-top: 50px;
+    height: 100vh;
+}
+.adminDdashboardUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.adminprofilePics{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    cursor: pointer;
+}
+.adminmyprofileDetails{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+.adminDashboardItems{
+    padding-left: 30px;
+    margin-top: 30px;
+}
+.adminDashboardContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0px;
+    padding-left: 10px;
+}
+.adminDashboardContent:hover{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0px;
+    padding-left: 10px;
+    background-color: rgb(8, 52, 82);
+
+}
+.adminDashboardIcon{
+    color: white !important;
+    font-size: 20px !important;
+    margin-right: 13px;
+    cursor: pointer;
+}
+.adminDashboardContentTitle{
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+
+.adminRightDashboardContainer{
+    flex: 9;
+    background-color: rgb(255, 255, 255);
+}

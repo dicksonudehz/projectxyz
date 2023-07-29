@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .topBarContainer {
   display: flex;
@@ -66,13 +66,13 @@
   align-items: center;
   justify-content: space-around;
 }
-.topBarAuth {
+/* .topBarAuth {
   color: white;
   font-size: 16px;
   cursor: pointer;
   text-transform: capitalize;
   font-weight: 400;
-}
+} */
 .cart {
   position: relative;
   cursor: pointer;
@@ -209,16 +209,24 @@
 .middleBarBottomLeft {
   flex: 6;
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: center; 
   align-items: center;
-  /* position: absolute; */
+  /* position: absolute;
   /* left: 0; */
 }
-.categoryItems {
+.categoryItems  {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+.categoryItems ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 .categoryItems li {
   list-style: none;
@@ -238,12 +246,263 @@ a:-webkit-any-link:hover{
 .rightBottomLeft {
   flex: 3;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   display: flex;
+  margin-left: 23px;
+  padding: 10px 30px;
+  cursor: pointer;
 }
+
 .deliveryDate {
-  font-size: 12px;
+  font-size: 16px;
   align-self: center;
   justify-content: center;
   cursor: pointer;
+  position: relative;
+
+}
+.acountDetailsDropDownItems{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 50px;
+  width: 16%;
+  margin-top: 50px;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-1px);
+  transition: all 1s;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(223, 223, 223);
+  z-index: 999999999999999999999;
+}
+.acountDetailsDropDownItems ul li{
+  list-style: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 3;
+  border-bottom: 1px solid #d8d8d8;
+  width: 100%;
+  color: grey;
+}
+.acountDetailsDropDownItems ul li:hover{
+  background-color: rgb(238, 238, 238);
+
+}
+.acountDetailsDropDownItems.activestate{
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-1px);
+  transition: all 1s;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(223, 223, 223);
+  z-index: 999999999999999999999;
+  /* height: 0; */
+}
+.acountDetailsDropDownItems.inactive{
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(223, 223, 223);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999999999999999999999;
+  /* height: 0; */
+}
+/* sign in/signup button  */
+
+.loginRegister h4{
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.loginRegister h4:hover{
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(235, 235, 235);
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.handleclose{
+  background-color: rgb(221, 221, 221);
+}
+.formSignUpButton{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+.loginHere{
+  padding: 5px 35px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+  background: transparent;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: rgb(190, 190, 190);
+}
+.loginHere:hover{
+  padding: 5px 35px;
+  border: 1px solid  #cfcfcf;;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color: #cfcfcf;
+  transform-origin: 0.5s all;
+}
+.signupHere{
+  padding: 5px 35px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color: #dadada;
+  transform-origin: 0.5s all;
+}
+.signupHere:hover{
+  padding: 5px 35px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+  background: transparent;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: rgb(190, 190, 190);
+}
+
+
+.signInWithGoogle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  flex-direction: column;
+}
+.signupGoogle{
+  padding: 10px 40px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color: #dadada;;
+}
+.signupGoogle:hover{
+  padding: 10px 40px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: rgb(190, 190, 190);
+  background-color: white;
+  transition: all 1s;
+}
+.signInWithGoogle p{
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-transform: capitalize;
+  font: none;
+  color: rgb(179, 179, 179);
+  font-size: 12px;
+}
+.inputItems{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.loginContainerForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+.inputemail{
+  border: 1px solid rgb(211, 211, 211);
+  padding: 10px;
+  width: 80%;
+}
+.inputemail:focus{
+  padding: 10px;
+  width: 80%;
+  outline: none;
+}
+.inputemail::placeholder{
+  text-transform: capitalize;
+}
+.inputpassword{
+  border: 1px solid rgb(211, 211, 211);
+  padding: 10px;
+  width: 80%;
+}
+.inputpassword:focus{
+  border: 1px solid rgb(211, 211, 211);
+  padding: 10px;
+  width: 80%;
+  outline: none;
+}
+.inputpassword::placeholder{
+ text-transform: capitalize;
+ 
+}
+.passwordReset{
+  font-weight: normal;
+  font-size: 14px;
+  cursor: pointer;
+}
+.signInButton{
+  border: 1px solid rgb(211, 211, 211);
+  padding: 10px;
+  width: 80%;
+  background-color: #000;
+  color: white;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.signupContainer{
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.signUpinputField{
+  border: 1px solid rgb(211, 211, 211);
+  padding: 10px;
+  width: 80%;
+  outline: none;
+}
+.signUpinputField::placeholder{
+  text-transform: capitalize;
+}
+.signUpinputField:focus{
+  outline: none;
+}
+.clickhere{
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: rgb(107, 0, 0);
 }

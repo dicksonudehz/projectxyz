@@ -19,9 +19,6 @@ const productCard = () => {
         </div>
         <div className="cards">
           <CardItems />
-          <CardItems />
-          <CardItems />
-          <CardItems />
         </div>
       </div>
     </>

@@ -4,9 +4,12 @@ import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { previewProductData } from "../../pages/expressorder/productData";
+// import { previewProductData } from "../../pages/expressorder/productData";
 import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
 import { useDispatch, useSelector } from "react-redux";
+import malta from "../../images/malta.jpg";
+import { Link } from "react-router-dom";
+import { topSixProduct } from "../../slice/topSixProductSlice";
 
 const FeaturedProduct = () => {
   const dispatch = useDispatch();
@@ -15,10 +18,10 @@ const FeaturedProduct = () => {
     loading: pLoading,
     data: pData,
     error: pError,
-  } = useSelector((state) => state.fetchAllProduct);
+  } = useSelector((state) => state.topSixProduct);
 
   useEffect(() => {
-    dispatch(fetchAllProduct());
+    dispatch(topSixProduct());
   }, [dispatch]);
 
   const [select, setSelect] = useState(null);
@@ -29,9 +32,9 @@ const FeaturedProduct = () => {
     }
     setSelect(index);
   };
-  const HandleClick = (item)=> {
-console.log(item)
-  }
+  const HandleClick = (item) => {
+    console.log(item);
+  };
   return (
     <>
       <div className="featureProductContainer">
@@ -56,9 +59,9 @@ console.log(item)
             <div className="featureProConBottom">
               {pLoading && <p>loading...</p>}
               {pError && <p>error: {pError} </p>}
-             
+
               <img
-                src="./images/malta.jpg"
+                src={malta}
                 alt="this is a placeholder"
                 className="featureProductImg"
               />
@@ -85,34 +88,33 @@ console.log(item)
             </div>
           </div>
           <div className="featuredProConBottom">
-          {pData &&
-                pData.map((product, index) => {
-                  return (
-                    <>
-                  <div className= "mainProContainer" key={index}>
-                    <div className="mainProIcons">
-                      <SearchOutlinedIcon className="mainProIcon" />
+            {pData &&
+              pData.map((product, index) => {
+                return (
+                  <>
+                    <div className="mainProContainer" key={index}>
+                      <Link to={`/singleproduct/${product._id}`}>
+                        <div className="mainProIcons">
+                          <SearchOutlinedIcon className="mainProIcon" />
+                        </div>
+                        <div className="mainProInfoCon">
+                          <img src={product.image} alt="" className="proImg" />
+                          <button className="addToCart">add to cart</button>
+                          {/* <button className="addToCart">
+                          <ShoppingCartOutlinedIcon />
+                          </button> */}
+                          <div className="mainProTitle">
+                            <h1 className="proTitle">{product.name}</h1>
+                            <p className="proPrice">{product.price}</p>
+                            {/* <button className="" onClick={() =>HandleClick(product)}>view</button> */}
+                          </div>
+                        </div>
+                      </Link>
                     </div>
-                    <div className="mainProInfoCon">
-                      <img src={product.image} alt="" className="proImg" />
-                      <button className="addToCart">
-                       add to cart
-                      </button>
-                      {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-                      <div className="mainProTitle">
-                        <h1 className="proTitle">{product.name}</h1>
-                        <p className="proPrice">{product.price}</p>
-                        {/* <button className="" onClick={() =>HandleClick(product)}>view</button> */}
-                      </div>
-                    </div>
-                  </div>
-                    </>
-                  );
-                })}
-                  
-          
+                    {/* </Link> */}
+                  </>
+                );
+              })}
           </div>
         </div>
       </div>

@@ -1,98 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./browsestoreslider.css";
 import BreadcrumSlider from "../../component/breadcrumslider/BreadcrumSlider";
+import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const BrowseStoreSlider = () => {
+  const Dispatch = useDispatch();
+  // const Selector = useSelector()
+
+  const {
+    loading: bLoading,
+    data: bdata,
+    error: berror,
+  } = useSelector((state) => state.fetchAllProduct);
+  useEffect(() => {
+    Dispatch(fetchAllProduct());
+  }, [Dispatch]);
   return (
     <>
       {/* <Topbar /> */}
+      <BreadcrumSlider />
       <div className="contentContainer">
-        <BreadcrumSlider/>
-        {/* <h1 className="headerOne">this is the start of the new stuff</h1> */}
-        <div className="cardContainerItems">
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
+        <div className="cardContentContainerItems">
+          {bLoading && <p>Loading </p>}
+          {berror && <p>Error </p>}
+          {bdata &&
+            bdata.map((product, index) => {
+              return (
+                <>
+                  <div className="cardContentContainers">
+                    <img
+                      src={product.image}
+                      alt=""
+                      className="cardContentImage"
+                    />
+                    <h1 className="cardContent">drinks</h1>
+                    {/* <div className="cardContent">
             </div> */}
-          </div>
-         
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
-          <div className="cardContentContainer">
-            <img
-              src="./images/ribena.jpg"
-              alt=""
-              className="cardContentImage"
-            />
-            <h1 className="cardContent">drinks</h1>
-            {/* <div className="cardContent">
-            </div> */}
-          </div>
+                  </div>
+                </>
+              );
+            })}
         </div>
-        
       </div>
     </>
   );

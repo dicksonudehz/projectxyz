@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dashboardContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right: 0px;
+}
+.leftDashboardContainer{
+    flex: 3;
+    background-color: rgb(6, 34, 53);
+    padding-top: 50px;
+    height: 100vh;
+}
+.dashboardUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.profilePics{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    cursor: pointer;
+}
+.myprofileDetails{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+.dashboardItems{
+    padding-left: 30px;
+    margin-top: 30px;
+}
+.dashboardContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dashboardIcon{
+    color: white !important;
+    font-size: 20px !important;
+    margin-right: 13px;
+    cursor: pointer;
+}
+.dashboardContentTitle{
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+
+.rightDashboardContainer{
+    flex: 9;
+    background-color: rgb(255, 255, 255);
+}

@@ -2,6 +2,8 @@ import React from 'react'
 import './breadcrumslider.css'
 import Topbar from '../Topbar'
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import retail from "../../images/retail.jpg";
+
 
 
 const BreadcrumSlider = () => {
@@ -9,7 +11,7 @@ const BreadcrumSlider = () => {
     <>
     <Topbar/>
       <div className="browseStoreSliderContainer">
-          <img src="./images/retail.jpg" alt="" className="sliderImage" />
+          <img src={retail} alt="" className="sliderImage" />
           <div className="sliderContent">
             <h1>browser TAM</h1>
             <div className="sliderContentItems">

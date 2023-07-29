@@ -4,13 +4,16 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import obiji from "../../images/obiji.jpeg";
+import larsor from "../../images/larsor.jpg";
+
 
 const ProductAd = () => {
   return (
     <>
       <div className="productAdContainer">
         <div className="productAdLeft">
-          <img src="./images/obiji.jpeg" alt="" className="productAdImg" />
+          <img src={obiji} alt="" className="productAdImg" />
         </div>
         <div className="productAdRight">
           <div className="productAdRightTop">
@@ -23,7 +26,7 @@ const ProductAd = () => {
               <ArrowForwardIosOutlinedIcon className="proAdRightArrow" />
             </div>
             <img
-              src="./images/larsor.jpg"
+              src={larsor}
               alt=""
               className="proAdRightTopSlideImage"
             />

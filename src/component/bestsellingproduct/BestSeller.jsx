@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./bestseller.css";
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import advertimage from "../../images/advertimage.jpg";
+import onion from "../../images/onion.jpg";
+import ehuru from "../../images/ehuru.jpg";
+import ube from "../../images/ube.jpg";
+import custard from "../../images/custard.jpg";
+import yam from "../../images/yam.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { BestSellerProduct } from "../../slice/bestSellerProductSlice";
 
 const BestSeller = () => {
+  const dispatch = useDispatch();
+
+  const { loading, data, error } = useSelector(
+    (state) => state.BestSellerProduct
+  );
+
+  useEffect(() =>{
+    dispatch(BestSellerProduct)
+  })
   return (
     <>
       <div className="bestSellerProdContainer">
         <div className="bestSellerProdConLeft">
           <div className="bestSellerContentCon">
             <div className="bestSellerContentImg">
-              <img
-                src="./images/advertimage.jpg"
-                alt=""
-                className="proBestSellerImg"
-              />
+              <img src={advertimage} alt="" className="proBestSellerImg" />
             </div>
             <div className="bestSellerContentConItems">
               <p>great houston area</p>
@@ -49,11 +62,7 @@ const BestSeller = () => {
                 <SearchOutlinedIcon className="searchIcon" />
               </div>
               <div className="bestSellerProductContentContainer">
-                <img
-                  src="./images/onion.jpg"
-                  alt=""
-                  className="bestSellerprodImg"
-                />
+                <img src={onion} alt="" className="bestSellerprodImg" />
                 <button className="bestSellerAddToCart">Add to cart </button>
                 {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -71,11 +80,7 @@ const BestSeller = () => {
                 <SearchOutlinedIcon className="searchIcon" />
               </div>
               <div className="bestSellerProductContentContainer">
-                <img
-                  src="./images/ehuru.jpg"
-                  alt=""
-                  className="bestSellerprodImg"
-                />
+                <img src={ehuru} alt="" className="bestSellerprodImg" />
                 <button className="bestSellerAddToCart">Add to cart </button>
                 {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -93,11 +98,7 @@ const BestSeller = () => {
                 <SearchOutlinedIcon className="searchIcon" />
               </div>
               <div className="bestSellerProductContentContainer">
-                <img
-                  src="./images/ube.jpg"
-                  alt=""
-                  className="bestSellerprodImg"
-                />
+                <img src={ube} alt="" className="bestSellerprodImg" />
                 <button className="bestSellerAddToCart">Add to cart </button>
                 {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -115,11 +116,7 @@ const BestSeller = () => {
                 <SearchOutlinedIcon className="searchIcon" />
               </div>
               <div className="bestSellerProductContentContainer">
-                <img
-                  src="./images/custard.jpg"
-                  alt=""
-                  className="bestSellerprodImg"
-                />
+                <img src={custard} alt="" className="bestSellerprodImg" />
                 <button className="bestSellerAddToCart">Add to cart </button>
                 {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -137,11 +134,7 @@ const BestSeller = () => {
                 <SearchOutlinedIcon className="searchIcon" />
               </div>
               <div className="bestSellerProductContentContainer">
-                <img
-                  src="./images/yam.jpg"
-                  alt=""
-                  className="bestSellerprodImg"
-                />
+                <img src={yam} alt="" className="bestSellerprodImg" />
                 <button className="bestSellerAddToCart">Add to cart </button>
                 {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />

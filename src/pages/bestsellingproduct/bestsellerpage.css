@@ -17,7 +17,7 @@
   position: absolute;
   z-index: 9999;
   margin-left: 20px;
-margin-top: 30px;
+  margin-top: 30px;
 }
 .bestSellerLeftItems p {
   text-transform: capitalize;
@@ -37,92 +37,102 @@ margin-top: 30px;
   flex: 8;
   margin-left: 40px;
 }
-.bestSellerRightTitleItems{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.bestSellerRightTitleItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.bestSellerTitle{
-    text-transform: capitalize;
-    font-weight: bold;
-    font-size: 14px;
+.bestSellerTitle h1 {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 28px;
 }
-.bestSellerRightItems{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.bestSellerRightItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.bestSellerItems ul{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+.bestSellerItems ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 7px;
 }
-.bestSellerItems ul li{
-    list-style: none;
-    padding-right: 20px;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: capitalize;
+.bestSellerItems ul li {
+  list-style: none;
+  padding-right: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
 }
-.bestSellerProductContainer{
+.bestSelletIcons {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.bestSellericonsLeft {
+  cursor: pointer;
+}
+.bestSellericonsRight {
+  cursor: pointer;
+}
+.bestSellerProductContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 }
-.bestSellsProdItemContainer{
-    
-    width: 30%;
-    position: relative;
-    margin-top: 30px;
-
+.bestSellsProdItemContainer {
+  width: 30%;
+  position: relative;
+  margin-top: 30px;
 }
 /* .bestSellerProdItem{
     width: 40%;
 } */
-.BestSellerProduct{
-    width: 100%;
-    object-fit: cover;
-    position: relative;
+.BestSellerProduct {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
 }
-.searchBestSellerIcon{
-    position: absolute;
-    z-index: 9999;
-    right: 0;
-    top: 0;
-    padding: 10px;
-    font-size: 40px !important;
-    background-color: white;
-    margin-right: 10px;
-    margin-top: 10px;
+.searchBestSellerIcon {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  font-size: 40px !important;
+  background-color: white;
+  margin-right: 10px;
+  margin-top: 10px;
 }
-.bestSellerProduct{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.bestSellerProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.bestSellerAddtoCart{
-    background-color: rgb(48, 48, 68);
-    width: 100%;
-    padding: 10px 0px 10px 0px;
-    color: white;
-    text-transform: capitalize;
-    font-size: 14px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+.bestSellerAddtoCart {
+  background-color: rgb(48, 48, 68);
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-.bestSellerTittle{
-    font-size: 14px;
-    text-align: center;
-    font-weight: normal;
-    padding-top: 10px;
+.bestSellerTittle {
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
+  padding-top: 10px;
 }
-.bestSellerPrice{
-    font-size: 12px;
-    text-align: center;
-    padding-top: 5px;
-    font-weight: bold;
+.bestSellerPrice {
+  font-size: 12px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
 }

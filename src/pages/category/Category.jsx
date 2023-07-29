@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Topbar from "../../component/Topbar";
 import "./category.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -6,14 +6,30 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import AppsIcon from "@mui/icons-material/Apps";
 import TuneIcon from "@mui/icons-material/Tune";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import retail from "../../images/retail.jpg";
+import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Category = () => {
+  const Dispatch = useDispatch();
+  // const Selector = useSelector()
+
+  const {
+    loading: cloading,
+    data: cdata,
+    error: cerror,
+  } = useSelector((state) => state.fetchAllProduct);
+
+  useEffect(() => {
+    Dispatch(fetchAllProduct());
+  }, [Dispatch]);
+
   return (
     <>
       <Topbar />
       <div className="categoryContaienr">
         <div className="breadcrumContainer">
-          <img src="./images/retail.jpg" alt="" className="breadcrumImage" />
+          <img src={retail} alt="" className="breadcrumImage" />
           <div className="breadcrumContent">
             <div className="breadcrumHeaderNav">
               <KeyboardBackspaceIcon className="arrowBack" />
@@ -68,118 +84,34 @@ const Category = () => {
           </div>
         </div>
         <div className="categoryProductContainerBottom">
-          <div className="categoryproductItem">
+          {cloading && <p>loading</p>}
+          {cerror && <p>error</p>}
+          {cdata && cdata.map((product, index) => {
+            return(
+              <>
+              <div className="categoryproductItem">
             <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
+            <img src={product.image} alt="" className="productItemImg" />
             {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
                     </button> */}
             <div className="categoryProd">
               <button className="categoryAddtoCart">Add to cart </button>
               <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
+              {product.name}
               </h1>
-              <p className="categoryProductPrice">N4000</p>
+              <p className="categoryProductPrice">N{product.price}</p>
             </div>
           </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
-          <div className="categoryproductItem">
-            <SearchOutlinedIcon className="searchCategoryIcon" />
-            <img src="./images/labis.jpg" alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-            <div className="categoryProd">
-              <button className="categoryAddtoCart">Add to cart </button>
-              <h1 className="categoryCardTitle">
-                Burger Peanuts Snack by Nkatie
-              </h1>
-              <p className="categoryProductPrice">N4000</p>
-            </div>
-          </div>
+              </>
+            )
+          })}
+          
+          
+          
+          
+          
+          
         </div>
       </div>
     </>

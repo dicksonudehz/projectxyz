@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./singleproduct.css";
 import BreadcrumSlider from "../../component/breadcrumslider/BreadcrumSlider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -7,8 +7,42 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RelatedProducts from "../../component/relatedproduct/RelatedProducts";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import custard from "../../images/custard.jpg";
+import { addToCart } from "../../slice/addToCartSlice";
+import { singleProduct } from "../../slice/singleProductSlice";
+import { relatedProduct } from "../../slice/relatedProductSlice";
 
 const SingleProduct = () => {
+  const dispatch = useDispatch();
+  const params = useParams();
+
+  const [qty, setQty] = useState(2);
+
+  const {
+    loading: sLoading,
+    data: sData,
+    error: sError,
+  } = useSelector((state) => state.singleProduct);
+
+  const HandleAddToCart = () => {
+    const cartItem = {
+      name: sData?.name,
+      price: sData?.price,
+      product: sData?._id,
+      image: sData?.image[0],
+      quantity: Number(qty),
+    };
+    dispatch(addToCart(cartItem));
+  };
+
+  useEffect(() => {
+    dispatch(singleProduct(params.id));
+    dispatch(relatedProduct(params.id));
+  }, [dispatch, params.id]);
+
   return (
     <>
       <BreadcrumSlider />
@@ -39,49 +73,62 @@ const SingleProduct = () => {
             <div className="productContentContainerLeft">
               <div className="productContentItems">
                 <div className="productImageDesc">
-                  <img
-                    src="./images/custard.jpg"
-                    alt=""
-                    className="productMainImage"
-                  />
-                  <div className="featureImageDesc">
-                    <div className="productImageDescContainer">
-                      <ArrowBackIosIcon />
+                  {sLoading && <p>Loading...</p>}
+                  {sError && <p>Error...</p>}
+                  {sData && (
+                    <>
                       <img
-                        src="./images/custard.jpg"
+                        src={sData.image[0]}
                         alt=""
-                        className="productFeatureImage"
+                        className="productMainImage"
                       />
-                      <img
-                        src="./images/custard.jpg"
-                        alt=""
-                        className="productFeatureImage"
-                      />
-                      <img
-                        src="./images/custard.jpg"
-                        alt=""
-                        className="productFeatureImage"
-                      />
-                      <img
-                        src="./images/custard.jpg"
-                        alt=""
-                        className="productFeatureImage"
-                      />
-                      <img
-                        src="./images/custard.jpg"
-                        alt=""
-                        className="productFeatureImage"
-                      />
-                      <ArrowForwardIosIcon />
-                    </div>
-                    <div className="shareProductSocials">
-                      <h1>share this product </h1>
-                      <div className="socialMediaIcon">
-                        <FacebookIcon className="singleProductSocials1" />
-                        <InstagramIcon className="singleProductSocials" />
+                      <div className="featureImageDesc">
+                        <div className="productImageDescContainer">
+                          <ArrowBackIosIcon />
+                          {sData.image.map((item, i) => {
+                            return (
+                              <>
+                                <img
+                                  src={item}
+                                  alt=""
+                                  className="productFeatureImage"
+                                />
+                              </>
+                            );
+                          })}
+
+                          <img
+                            src={custard}
+                            alt=""
+                            className="productFeatureImage"
+                          />
+                          <img
+                            src={custard}
+                            alt=""
+                            className="productFeatureImage"
+                          />
+                          <img
+                            src={custard}
+                            alt=""
+                            className="productFeatureImage"
+                          />
+                          <img
+                            src={custard}
+                            alt=""
+                            className="productFeatureImage"
+                          />
+                          <ArrowForwardIosIcon />
+                        </div>
+                        <div className="shareProductSocials">
+                          <h1>share this product </h1>
+                          <div className="socialMediaIcon">
+                            <FacebookIcon className="singleProductSocials1" />
+                            <InstagramIcon className="singleProductSocials" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
+                    </>
+                  )}
                 </div>
               </div>
               <div className="productDescContent">
@@ -130,10 +177,8 @@ const SingleProduct = () => {
               Free delivery on thousands of products in Lagos, Ibadan & Abuja
               <b>Details</b>
             </p>
-            <h1 className="chooseLocation">
-              choose your location
-            </h1>
-          <select name="location" id=""></select>
+            <h1 className="chooseLocation">choose your location</h1>
+            <select name="location" id=""></select>
           </div>
         </div>
       </div>

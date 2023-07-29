@@ -1,20 +1,11 @@
-
 .cardContainerBottom {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(255, 255, 255);
-  width: 20%;
-  margin-bottom: 35%;
-
-}
-.cardContainerBottomUpItems {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: #e7e7e7;
-  width: 20%;
-  padding-bottom: 40px;
+  /* flex-wrap: wrap; */
+  /* width: 100%; */
+  position: relative;
+  margin-bottom: 50px;
 }
 .cardContainerTopItems {
   position: absolute;
@@ -24,21 +15,32 @@
   width: 100%;
   padding: 10px;
 }
-.discount {
+.cardDiscountExploreItem{
   background-color: rgb(255, 115, 0);
-  font-size: 14px;
-  font-weight: 500;
   cursor: pointer;
-  padding: 2px 10px 2px 10px;
   align-items: center;
   justify-content: center;
   display: flex;
-  border-radius: 30px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+}
+.discount {
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 50%;
+ 
+  padding: 10px;
   color: white;
 }
 .productIconExplore {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -47,13 +49,21 @@
   font-size: 18px !important;
 }
 .cardContainerBottomItems {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+.cardContainerContent {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* flex-wrap: wrap; */
   align-items: center;
+  padding-right: 10px;
+  padding-bottom: 20px;
 }
-
 .cardImage {
   width: 100%;
   object-fit: cover;
@@ -87,15 +97,42 @@
   font-size: 14px;
   color: rgb(255, 115, 0);
 }
-.rating{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.starContent {
+  color: rgb(255, 115, 0);
+  font-size: 14px !important;
 }
 
-.starContent{
-    color: rgb(255, 115, 0);
-    font-size: 14px !important;
+/* this is carousel example css  */
+.slick-slider div {
+  display: flex !important;
+  /* width: 100% !important; */
+  gap: 10px;
+}
+/* .slick-next{
+  background-color: rgb(0, 0, 0) !important;
+  z-index: 99999999;
+  right: 40px !important;
+} */
+.carouselContainer {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 33%;
+  padding: 5px;
+}
 
-
+.box {
+  background-color: green;
+  height: 40;
+  padding: 50px 150px;
+}
+.box h3 {
+  text-align: center;
 }

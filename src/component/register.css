@@ -1,0 +1,40 @@
+.signupContainer{
+    /* gap: 40px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    /* margin-left: 40px; */
+    overflow-y: scroll;
+  }
+  .registerForm{
+     gap: 40px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     margin-top: 50px;
+     width: 100%;
+  }
+  
+  .signUpinputField{
+    border: 1px solid rgb(211, 211, 211);
+    padding: 10px;
+    width: 80%;
+    outline: none;
+  }
+  .signUpinputField::placeholder{
+    text-transform: capitalize;
+  }
+  .signUpinputField:focus{
+    outline: none;
+  }
+  .clickhere{
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: rgb(107, 0, 0);
+  }

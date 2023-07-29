@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.orderContainer {
+  background-color: rgb(243, 243, 243);
+  /* border-radius: 10px; */
+  margin: 20px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  align-items: center;
+  position: relative;
+}
+.orderHeader h1 {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 45px;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.productOrderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainProduct {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.productOrderitem {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  flex: 1;
+  width: 20%;
+  margin-left: 20px;
+}
+
+.productOrderimg {
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 10px;
+  padding: 7px;
+  position: relative;
+}
+.productQuantity {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  color: rgb(0, 0, 0);
+  z-index: 999999;
+  border-radius: 50%;
+  top: 0;
+  right: -8px;
+  left: 16;
+  width: 15px;
+  height: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+}
+.productTitleItems {
+  flex: 8;
+  margin-left: 30px;
+}
+
+.productTitleItems h1{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 25px;
+    color: rgb(61, 61, 61);
+}
+.productTitleItems span{
+    font-size: 17px;
+    text-transform: capitalize;
+    color: rgb(61, 61, 61);
+
+}
+.productPrice p{
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: capitalize;
+    
+}
+.lineDivider{
+    margin-left: 20px;
+    color: rgb(182, 182, 182);
+}
+.subtotalContainer{
+    display: flex;
+    flex-direction: column;
+}
+.subtotalItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+.subtotalItem span{
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 20px;
+}
+.subtotalItem h1{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 25px;
+}
+.placeOrderButton{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width:80%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    align-self: center;
+    margin: 20px auto;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+}

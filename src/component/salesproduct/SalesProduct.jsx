@@ -1,18 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./salesproduct.css";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { previewProductData } from "../../pages/expressorder/productData";
+import malt from "../../images/malt.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { topSixProduct } from "../../slice/topSixProductSlice";
 
 const SalesProduct = () => {
+  const dispatch = useDispatch();
+  const {
+    loading: tLoading,
+    data: tData,
+    error: tError,
+  } = useSelector((state) => state.topSixProduct);
+
+  useEffect(() => {
+    dispatch(topSixProduct)
+  })
+
   const [details, setDetails] = useState([]);
   const [popdetails, setPopDetails] = useState(false);
   const [styling, setStyling] = useState(null);
+
   const handDetails = (product) => {
     setDetails([product]);
     setPopDetails(!popdetails);
+    
     if (styling === null) {
       setStyling({
         position: "fixed",
@@ -42,7 +58,10 @@ const SalesProduct = () => {
             </div>
           </div>
           <div className="mainProSalesContainer">
-            {previewProductData.map((product, index) => {
+            {tLoading && <p>loading...</p>}
+            {tError && <p>Error....</p>}
+
+            {tData && tData.map((product, index) => {
               return (
                 <>
                   <div className="saleProConLeftBottom" key={index}>
@@ -56,8 +75,8 @@ const SalesProduct = () => {
                       <img src={product.image} alt="" className="salesProImg" />
                       <button className="salesAddToCart">Add to cart </button>
                       <div className="salesProTopTitle">
-                        <h1 className="salesTitle">{product.title}</h1>
-                        <p className="salesPrice">N{product.price}</p>
+                        <h1 className="salesTitle">{product.name}</h1>
+                        <p className="salesPrice">{product.price}</p>
                       </div>
                     </div>
                   </div>
@@ -83,12 +102,7 @@ const SalesProduct = () => {
                           <p>Brand: Obiji Foods</p>
                           <h1 className="price">${pop.price}</h1>
                           <p className="productDescriptionCont">
-                            Obiji’s Whole Prekese – a versatile <br />
-                            plant with medicinal benefits including prevention{" "}
-                            <br />
-                            of bacteria growth, ulcer inhibition, hypertension
-                            reduction, <br />
-                            and asthma management.
+                            {pop.description}
                           </p>
                           <div className="productCounter">
                             <button className="substract">-</button>
@@ -140,7 +154,7 @@ const SalesProduct = () => {
               <p className="percentageBarge">3%</p>
               <p className="featuredBarge">featured</p>
             </div>
-            <img src="./images/malt.jpg" alt="" className="salesImage" />
+            <img src={malt} alt="" className="salesImage" />
           </div>
 
           <div className="salesProConTitle">

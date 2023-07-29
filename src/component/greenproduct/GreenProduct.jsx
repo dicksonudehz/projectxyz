@@ -4,6 +4,9 @@ import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import ehuru from "../../images/ehuru.jpg";
+import vegetable from "../../images/vegetable.jpg";
+
 
 const GreenProduct = () => {
   return (
@@ -21,7 +24,7 @@ const GreenProduct = () => {
             <ArrowBackIosOutlinedIcon className="greenAdLeftArrow" />
             <ArrowForwardIosOutlinedIcon className="greenAdRightArrow" />
           </div>
-          <img src="./images/ehuru.jpg" alt="" className="greenProductAdImg" />
+          <img src={ehuru} alt="" className="greenProductAdImg" />
           <div className="greenProductAdNavIcons">
             <ShoppingCartOutlinedIcon className="greenProductAdNavIcon" />
             <SearchOutlinedIcon className="greenProductAdNavIconSearch" />
@@ -33,7 +36,7 @@ const GreenProduct = () => {
         </div>
         <div className="greenProdRightContainer">
           <img
-            src="./images/vegetable.jpg"
+            src={vegetable}
             alt=""
             className="vegetableProductAdImg"
           />

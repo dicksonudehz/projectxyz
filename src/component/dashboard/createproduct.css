@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.createProductContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 0px;
+    /* margin: 40px; */
+    background-color: rgb(235, 235, 235);
+    padding-left: 60px;
+    padding-top: 40px;
+    overflow-y: scroll;
+    height: calc(100vh );
+}
+/* ::-webkit-scrollbar{
+    width: 20px;
+} */
+.createProductContainer h1{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 35px;
+}
+.createProductNameContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.createProductNameContainer h1{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-right: 20px;
+    color: rgb(59, 59, 59);
+}
+.createProductInput{
+    padding: 10px 10px;
+    width: 50%;
+    outline: none;
+    border: none;
+}
+.createProductInput::placeholder{
+    text-transform: capitalize;
+    color: rgb(197, 197, 197);
+}
+.createProductPrice{
+    padding: 10px 10px;
+    width: 30%;
+    outline: none;
+    border: none;
+}
+.createProductPrice::placeholder{
+    text-transform: capitalize;
+    color: rgb(197, 197, 197);
+}
+.createProductQty{
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+.createProductQty:focus{
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+.createProductDesc{
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 50%;
+}
+.createProductDesc::placeholder{
+    text-transform: capitalize;
+    color: rgb(109, 109, 109);
+    font-size: 16px;
+}
+.createProductCategory{
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+.createProductFile{
+    outline: none;
+    border: none;
+    padding: 10px;
+}

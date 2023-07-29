@@ -1,6 +1,12 @@
 import React from "react";
 import "./productreel.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import ube from "../../images/ube.jpg";
+import redpepper from "../../images/redpepper.jpg";
+import yam from "../../images/yam.jpg";
+import onion from "../../images/onion.jpg";
+import manyyam from "../../images/manyyam.jpg";
+
 
 const ProductReel = () => {
   return (
@@ -20,7 +26,7 @@ const ProductReel = () => {
               <SearchOutlinedIcon className="mainProCardIcon" />
             </div>
             <div className="mainProInfoCon">
-              <img src="./images/ube.jpg" alt="" className="mainProCardImg" />
+              <img src={ube} alt="" className="mainProCardImg" />
               <button className="prodCardAddToCard">Add to cart </button>
               {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -36,7 +42,7 @@ const ProductReel = () => {
               <SearchOutlinedIcon className="mainProCardIcon" />
             </div>
             <div className="mainProInfoCon">
-              <img src="./images/redpepper.jpg" alt="" className="mainProCardImg" />
+              <img src={redpepper} alt="" className="mainProCardImg" />
               <button className="prodCardAddToCard">Add to cart </button>
               {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -52,7 +58,7 @@ const ProductReel = () => {
               <SearchOutlinedIcon className="mainProCardIcon" />
             </div>
             <div className="mainProInfoCon">
-              <img src="./images/yam.jpg" alt="" className="mainProCardImg" />
+              <img src={yam} alt="" className="mainProCardImg" />
               <button className="prodCardAddToCard">Add to cart </button>
               {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -68,7 +74,7 @@ const ProductReel = () => {
               <SearchOutlinedIcon className="mainProCardIcon" />
             </div>
             <div className="mainProInfoCon">
-              <img src="./images/onion.jpg" alt="" className="mainProCardImg" />
+              <img src={onion} alt="" className="mainProCardImg" />
               <button className="prodCardAddToCard">Add to cart </button>
               {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
@@ -84,7 +90,7 @@ const ProductReel = () => {
               <SearchOutlinedIcon className="mainProCardIcon" />
             </div>
             <div className="mainProInfoCon">
-              <img src="./images/manyyam.jpg" alt="" className="mainProCardImg" />
+              <img src={manyyam} alt="" className="mainProCardImg" />
               <button className="prodCardAddToCard">Add to cart </button>
               {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
