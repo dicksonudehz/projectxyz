@@ -10,6 +10,9 @@ import { Link } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import { useSelector } from "react-redux";
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+
+
 
 function Topbar({ name, ...props }) {
   const { cartItems } = useSelector((state) => state.cart);
@@ -45,10 +48,6 @@ function Topbar({ name, ...props }) {
       document.removeEventListener("mousedown", handler);
     };
   });
-
-
- 
-
   return (
     <>
       <div className="topBarContainer">
@@ -64,7 +63,7 @@ function Topbar({ name, ...props }) {
         </div>
         <div className="rightTopBarContainer">
           <div className="cart">
-            <Link to="/cart">
+            <Link to="/addtocart">
               {/* Cart{" "} */}
               <ShoppingCartIcon className="cartIcon" />
               <div className="cartPRice">
@@ -173,24 +172,17 @@ function Topbar({ name, ...props }) {
           <div className="rightBottomLeft"  >
             <div className="openToogle" onClick={handleRightSideOpen} >
 
-            <span className="deliveryDate">Account Details</span>
+            <span className="deliveryDate"><PersonOutlineOutlinedIcon/> Hi, Dickson</span>
             </div>
             <div className= {`acountDetailsDropDownItems ${rightSidebar ? "activestate" : "inactive"}` }>
               <ul>
                 <li>
-                  <Link to="/admindashboard">admindashboard</Link>
+                  <Link to="/admindashboard">My Account</Link>
                 </li>
-                <li>User Details</li>
-                <li>ethnic delicacies</li>
-                <li>fish & sea food</li>
-                <li>flour</li>
-                <li>fresh produce</li>
-                <li>fruit & vegetable</li>
-                <li>grains</li>
-                <li>houshold</li>
-                <li>oil</li>
-                <li>provision</li>
-                <li>spices</li>
+                <li>Orders</li>
+                <li>inbox</li>
+                <li>voucher</li>
+                <li>logout</li>
               </ul>
             </div>
           </div>

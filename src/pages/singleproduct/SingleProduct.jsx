@@ -89,7 +89,7 @@ const SingleProduct = () => {
                             return (
                               <>
                                 <img
-                                  src={item}
+                                  src={item.image}
                                   alt=""
                                   className="productFeatureImage"
                                 />
@@ -119,16 +119,16 @@ const SingleProduct = () => {
                           />
                           <ArrowForwardIosIcon />
                         </div>
-                        <div className="shareProductSocials">
-                          <h1>share this product </h1>
-                          <div className="socialMediaIcon">
-                            <FacebookIcon className="singleProductSocials1" />
-                            <InstagramIcon className="singleProductSocials" />
-                          </div>
-                        </div>
                       </div>
                     </>
                   )}
+                  <div className="shareProductSocials">
+                    <h1>share this product </h1>
+                    <div className="socialMediaIcon">
+                      <FacebookIcon className="singleProductSocials1" />
+                      <InstagramIcon className="singleProductSocials" />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="productDescContent">

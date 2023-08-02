@@ -1,11 +1,11 @@
-.newProductMainContainer {
+.deleteProductMainContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 20px;
   overflow-y: scroll;
 }
-.newProductContainer {
+.deleteProductContainer {
   position: relative;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
@@ -14,26 +14,18 @@
   width: 33%;
   display: block;
 }
-.mainProIcon {
-  background-color: white;
-  font-size: 50px !important;
-  padding: 10px;
-  margin-right: 20px;
-  margin-top: 10px;
-  padding-top: 10px;
-}
-.newProductInfo {
+.deleteProductInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.newProductImage {
+.deleteProductImage {
   width: 100%;
   object-fit: cover;
 }
-.newProductDesc {
+.deleteProductDesc {
   background-color: rgb(48, 48, 68);
   width: 100%;
   padding: 10px 0px 10px 5px;
@@ -41,7 +33,7 @@
   font-size: 14px;
   
 }
-.newProductItems {
+.deleteProductItems {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -50,14 +42,37 @@
   background-color: rgb(238, 238, 238);
   margin: auto 0px;
 }
-.newProductName {
+.deleteProductName {
   font-size: 14px;
   text-align: center;
   font-weight: 400;
   text-transform: capitalize;
 }
-.newProductPrice {
+.deleteProductIcon {
   font-size: 14px;
   text-align: center;
-  font-weight: 400;
+  padding: 15px;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.deleteProductIcon:hover {
+  font-size: 14px;
+  text-align: center;
+  padding: 15px;
+  color: rgb(255, 41, 41);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 }

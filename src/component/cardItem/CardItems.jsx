@@ -32,7 +32,7 @@ const CardItems = (props) => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "grey", }}
+        style={{ ...style, display: "block", background: "grey" }}
         onClick={onClick}
       />
     );
@@ -78,52 +78,49 @@ const CardItems = (props) => {
     <>
       <div className="carouselContainer">
         <Slider {...settings}>
-        {tLoading && <p>Loading...</p>}
-              {tError && <p>Error...</p>}
+          {tLoading && <p>Loading...</p>}
+          {tError && <p>Error...</p>}
           {tData &&
             tData.map((product, index) => {
               return (
                 <>
-        <div className="cardContainerBottomItems">
-
-                  <div className="cardContainerContent">
-                    <div className="cardContainerTopItems">
-                      <div className="cardDiscountExploreItem">
-                        <span className="discount">-10%</span>
+                  <div className="cardContainerBottomItems">
+                    <div className="cardContainerContent">
+                      <div className="cardContainerTopItems">
+                        <div className="cardDiscountExploreItem">
+                          <span className="discount">-10%</span>
+                        </div>
+                        <div className="productIconExplore">
+                          <FavoriteBorderOutlinedIcon className="ProductIconExploreIcon" />
+                          <FavoriteBorderOutlinedIcon className="ProductIconExploreIcon" />
+                          <SearchOutlinedIcon className="ProductIconExploreIcon" />
+                        </div>
                       </div>
-                      <div className="productIconExplore">
-                        <FavoriteBorderOutlinedIcon className="ProductIconExploreIcon" />
-                        <FavoriteBorderOutlinedIcon className="ProductIconExploreIcon" />
-                        <SearchOutlinedIcon className="ProductIconExploreIcon" />
+                      <img
+                        src={product.image[0]}
+                        alt="main subject item"
+                        className="cardImage"
+                      />
+                      <h1 className="cardContainerBottomItemsHeader">
+                        {product.name}
+                      </h1>
+                      <div className="cardPrice">
+                        <h1 className="maxPrice">N{product.price}</h1>
+                        <span className="operand">-</span>
+                        <h1 className="maxPrice">N1500</h1>
                       </div>
-                    </div>
-                    <img
-                      src={product.image[0]}
-                      alt="main subject item"
-                      className="cardImage"
-                    />
-                    <h1 className="cardContainerBottomItemsHeader">
-                      {product.name}
-                    </h1>
-                    <div className="cardPrice">
-                      <h1 className="maxPrice">N{product.price}</h1>
-                      <span className="operand">-</span>
-                      <h1 className="maxPrice">N1500</h1>
-                    </div>
-                    <div className="rating">
-                      <StarOutlinedIcon className="starContent" />
-                      <StarOutlinedIcon className="starContent" />
-                      <StarOutlinedIcon className="starContent" />
-                      <StarHalfOutlinedIcon className="starContent" />
-                      <StarOutlineOutlinedIcon className="starContent" />
+                      <div className="rating">
+                        <StarOutlinedIcon className="starContent" />
+                        <StarOutlinedIcon className="starContent" />
+                        <StarOutlinedIcon className="starContent" />
+                        <StarHalfOutlinedIcon className="starContent" />
+                        <StarOutlineOutlinedIcon className="starContent" />
+                      </div>
                     </div>
                   </div>
-      </div>
-
                 </>
               );
             })}
-
         </Slider>
       </div>
     </>

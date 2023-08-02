@@ -8,6 +8,8 @@ import CreateProduct from "./CreateProduct";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { createProduct } from "../../slice/createProductSlice";
 import NewProduct from "./NewProduct";
+import DeleteProduct from "./DeleteProduct";
+import UpdateProduct from "./UpdateProduct";
 
 const AdminDashboard = () => {
   return (
@@ -47,8 +49,10 @@ const AdminDashboard = () => {
             );
           })}
           </Routes> */}
-          <NewProduct/>
+          {/* <NewProduct/> */}
         {/* <CreateProduct/> */}
+        {/* <DeleteProduct/> */}
+        <UpdateProduct/>
         </div>
       </div>
     </>

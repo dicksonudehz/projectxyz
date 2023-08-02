@@ -1,16 +1,25 @@
 .sliderContainer {
   position: relative;
   width: 100%;
-  z-index: -9999;
+  height: 400px;
+  background-color: red;
+
  
 }
 .sliderContainerImg {
   position: relative;
+  background-color: rgb(212, 107, 107);
+  height: 400px;
+  width: 100%;
 }
+
 .sliderImg {
   width: 100%;
-  max-height: 450px;
-  object-fit: cover;
+  max-height: 400px;
+  /* object-fit: cover; */
+  opacity: 1;
+  padding: 0;
+  margin: 0;
 }
 .sliderContainerItems {
   position: absolute;

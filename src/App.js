@@ -10,6 +10,7 @@ import ExpessOrderOne from "./pages/expressorder/ExpessOrderOne";
 import SingleProduct from "./pages/singleproduct/SingleProduct";
 // import Dashboard from './component/dashboard/Dashboard';
 import AdminDashboard from './component/dashboard/AdminDashboard';
+import AddToCart from './pages/addtocart/AddToCart';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/singleproduct/:id" element={<SingleProduct/>} />
           <Route path="/singleproduct" element={<SingleProduct/>} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/addtocart" element={<AddToCart />} />
         </Routes>
       </Router>
       <Footer />
