@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-
 function SliderNav() {
   function Arrow(props) {
     const { className, style, onClick } = props;
@@ -59,34 +58,18 @@ function SliderNav() {
 
   return (
     <>
-       <div className="sliderContainer">
-       <Slider {...settings}>
-       <div className="sliderContainerImg">
-            <img src={pic1} alt="" className="sliderImg" />
-            <div className="sliderContainerItems">
-              <h1>quality african breakfast</h1>
-              <h6> from TAMs collection of organic</h6>
-              <button className="orderButton">order now</button>
-            </div>
+      <div className="sliderContainer">
+        {/* <Slider {...settings} > */}
+            <div className="sliderContainerImg">
+              <img src={pic1} alt="" className="sliderImg" />
+              <div className="sliderContainerItems">
+                <h1>quality african breakfast</h1>
+                <h6> from TAMs collection of organic</h6>
+                <button className="orderButton">order now</button>
+              </div>
           </div>
-          <div className="sliderContainerImg">
-            <img src={pic2} alt="" className="sliderImg" />
-            <div className="sliderContainerItems">
-              <h1>quality african breakfast</h1>
-              <h6> from TAMs collection of organic</h6>
-              <button className="orderButton">order now</button>
-            </div>
-          </div>
-          <div className="sliderContainerImg">
-            <img src={pic2} alt="" className="sliderImg" />
-            <div className="sliderContainerItems">
-              <h1>quality african breakfast</h1>
-              <h6> from TAMs collection of organic</h6>
-              <button className="orderButton">order now</button>
-            </div>
-          </div>
-          
-        </Slider>
+
+        {/* </Slider> */}
       </div>
     </>
   );

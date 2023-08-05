@@ -11,6 +11,7 @@ import Login from "./Login";
 import Register from "./Register";
 import { useSelector } from "react-redux";
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import { HashLink as Links } from "react-router-hash-link";
 
 
 
@@ -177,7 +178,7 @@ function Topbar({ name, ...props }) {
             <div className= {`acountDetailsDropDownItems ${rightSidebar ? "activestate" : "inactive"}` }>
               <ul>
                 <li>
-                  <Link to="/admindashboard">My Account</Link>
+                  <Links to="#admindashboard">My Account</Links>
                 </li>
                 <li>Orders</li>
                 <li>inbox</li>

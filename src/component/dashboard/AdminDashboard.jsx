@@ -10,6 +10,16 @@ import { createProduct } from "../../slice/createProductSlice";
 import NewProduct from "./NewProduct";
 import DeleteProduct from "./DeleteProduct";
 import UpdateProduct from "./UpdateProduct";
+import AccountDetails from "./AccountDetails";
+import { HashLink as Links } from "react-router-hash-link";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import LogoutIcon from "@mui/icons-material/Logout";
+import Person3Icon from "@mui/icons-material/Person3";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import EditLocationAltIcon from "@mui/icons-material/EditLocationAlt";
+import PaymentsIcon from "@mui/icons-material/Payments";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
 const AdminDashboard = () => {
   return (
@@ -24,18 +34,29 @@ const AdminDashboard = () => {
             </h1>
           </div>
           <div className="adminDashboardItems">
-            {adminDashboardData.map((data, index) => {
-              return (
-                <>
-                  <div className="adminDashboardContent" key={index}>
-                    <Link to={`createproduct/${data.url}`}>
-                      <span className="adminDashboardIcon">{data.icon}</span> 
-                      <h className="adminDashboardContentTitle">{data.title}</h>
-                    </Link>
-                  </div>
-                </>
-              );
-            })}
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><DashboardIcon /></span>
+              <h className="adminDashboardContentTitle">admin details</h>
+            </div>
+            <Links to={CreateProduct}>
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><EditLocationAltIcon /></span>
+              <h className="adminDashboardContentTitle">create product</h>
+            </div>
+            </Links>
+            
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><DashboardIcon /></span>
+              <h className="adminDashboardContentTitle">admin details</h>
+            </div>
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><PlaylistAddIcon /></span>
+              <h className="adminDashboardContentTitle">new product</h>
+            </div>
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><FavoriteIcon /></span>
+              <h className="adminDashboardContentTitle">create product review</h>
+            </div>
           </div>
         </div>
         <div className="adminRightDashboardContainer">
@@ -49,10 +70,11 @@ const AdminDashboard = () => {
             );
           })}
           </Routes> */}
-          {/* <NewProduct/> */}
-        {/* <CreateProduct/> */}
-        {/* <DeleteProduct/> */}
-        <UpdateProduct/>
+          <NewProduct/>
+          <CreateProduct />
+          <DeleteProduct/>
+          <AccountDetails />
+          <UpdateProduct />
         </div>
       </div>
     </>

@@ -17,7 +17,7 @@ const CreateProduct = () => {
   }, [dispatch]);
   return (
     <>
-      <div className="createProductContainer">
+      <div className="createProductContainer" id="CreateProduct">
         <h1>create a new product </h1>
         <div className="createProductNameContainer">
           <h1>name</h1>

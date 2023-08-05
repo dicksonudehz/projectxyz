@@ -3,13 +3,14 @@ import yam from "../../images/yam.jpg";
 import custard from "../../images/custard.jpg";
 import manyyam from "../../images/manyyam.jpg";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import LogoutIcon from '@mui/icons-material/Logout';
-import Person3Icon from '@mui/icons-material/Person3';
-import ViewListIcon from '@mui/icons-material/ViewList';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import EditLocationAltIcon from '@mui/icons-material/EditLocationAlt';
-import PaymentsIcon from '@mui/icons-material/Payments';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import LogoutIcon from "@mui/icons-material/Logout";
+import Person3Icon from "@mui/icons-material/Person3";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import EditLocationAltIcon from "@mui/icons-material/EditLocationAlt";
+import PaymentsIcon from "@mui/icons-material/Payments";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import { HashLink as Links } from "react-router-hash-link";
 
 export const Data = [
   {
@@ -81,39 +82,37 @@ export const dashboardData = [
   {
     icon: <DashboardIcon />,
     title: "dashboard",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <EditLocationAltIcon />,
     title: "edit address",
-    url: "CreateProduct"
+    url: "CreateProduct",
   },
   {
     icon: <FavoriteIcon />,
     title: "wishlist",
-    url: "CreateProduct"
+    url: "CreateProduct",
   },
   {
     icon: <ViewListIcon />,
     title: "my order",
-    url: "CreateProduct"
+    url: "CreateProduct",
   },
   {
     icon: <Person3Icon />,
     title: "user profile",
-    url: "CreateProduct"
+    url: "CreateProduct",
   },
   {
     icon: <PaymentsIcon />,
     title: "payment method",
-    url: "CreateProduct"
+    url: "CreateProduct",
   },
   {
     icon: <LogoutIcon />,
     title: "log out",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
 ];
 
@@ -121,49 +120,42 @@ export const adminDashboardData = [
   {
     icon: <DashboardIcon />,
     title: "admin details",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
+    // url: <Links to={createProduct} />,
   },
   {
     icon: <EditLocationAltIcon />,
     title: "create product",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <PlaylistAddIcon />,
     title: "new products",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <FavoriteIcon />,
     title: "create product review",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <ViewListIcon />,
     title: "delete a product",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <Person3Icon />,
     title: "update product",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <PaymentsIcon />,
     title: "payment method",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
   {
     icon: <LogoutIcon />,
     title: "log out",
-    url: "CreateProduct"
-
+    url: "CreateProduct",
   },
 ];
