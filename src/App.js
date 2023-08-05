@@ -11,6 +11,8 @@ import SingleProduct from "./pages/singleproduct/SingleProduct";
 // import Dashboard from './component/dashboard/Dashboard';
 import AdminDashboard from './component/dashboard/AdminDashboard';
 import AddToCart from './pages/addtocart/AddToCart';
+import UserDashboard from './component/dashboard/userdashboard/UserDashboard';
+import CheckoutPage from './pages/checkoutpage/CheckoutPage';
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route path="/singleproduct/:id" element={<SingleProduct/>} />
           <Route path="/singleproduct" element={<SingleProduct/>} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/userdashboard" element={<UserDashboard />} />
+          <Route path="/checkoutpage" element={<CheckoutPage />} />
           <Route path="/addtocart" element={<AddToCart />} />
         </Routes>
       </Router>

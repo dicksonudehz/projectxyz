@@ -30,7 +30,7 @@ const Dashboard = () => {
                     </Link>
                   </div>
                 </>
-              )
+              );
             })}
           </div>
         </div>

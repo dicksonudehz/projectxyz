@@ -178,7 +178,10 @@ function Topbar({ name, ...props }) {
             <div className= {`acountDetailsDropDownItems ${rightSidebar ? "activestate" : "inactive"}` }>
               <ul>
                 <li>
-                  <Links to="#admindashboard">My Account</Links>
+                  <Links to="/userdashboard">My Account</Links>
+                </li>
+                <li>
+                  <Links to="/checkoutpage">checkoutpage</Links>
                 </li>
                 <li>Orders</li>
                 <li>inbox</li>

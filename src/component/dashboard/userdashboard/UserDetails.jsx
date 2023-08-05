@@ -1,13 +1,13 @@
-import "./accountdetails.css";
+import './userdetails.css'
 
-const AccountDetails = () => {
+const UserDetails = () => {
   return (
     <>
-      <div className="adminDetailContainer" id="admindashboard">
+     <div className="userDetailContainer" id="userdashboard">
         <h1 className="accountOverview">account overview</h1>
         <div className="accountDetailsContainerContent">
-          <div className="adminDetailContLeft">
-            <div className="adminDetailsContent">
+          <div className="userDetailContLeft">
+            <div className="userDetailsContent">
               <h4 className="accountDetailsHeader">account details</h4>
               <hr />
               <div className="accountDetailsInfo">
@@ -20,8 +20,8 @@ const AccountDetails = () => {
             </span>
             <span className="accountDetailAmount">N3000</span>
           </div>
-          <div className="adminDetailContRight">
-            <h1 className="adminDetailContRightHeader">address book</h1>
+          <div className="userDetailContRight">
+            <h1 className="userDetailContRightHeader">address book</h1>
             <hr />
             <div className="defaultShippingAddress">
               <p>your detault Shipping address</p>
@@ -34,7 +34,7 @@ const AccountDetails = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default AccountDetails;
+export default UserDetails

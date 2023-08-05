@@ -20,6 +20,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import EditLocationAltIcon from "@mui/icons-material/EditLocationAlt";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import EmailIcon from '@mui/icons-material/Email';
+import Messages from "./Messages";
+import NoMessages from "./NoMessages";
 
 const AdminDashboard = () => {
   return (
@@ -36,7 +39,7 @@ const AdminDashboard = () => {
           <div className="adminDashboardItems">
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><DashboardIcon /></span>
-              <h className="adminDashboardContentTitle">admin details</h>
+              <h className="adminDashboardContentTitle">admin profile</h>
             </div>
             <Links to={CreateProduct}>
             <div className="adminDashboardContent">
@@ -47,15 +50,19 @@ const AdminDashboard = () => {
             
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><DashboardIcon /></span>
-              <h className="adminDashboardContentTitle">admin details</h>
+              <h className="adminDashboardContentTitle">delete product</h>
             </div>
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><PlaylistAddIcon /></span>
-              <h className="adminDashboardContentTitle">new product</h>
+              <h className="adminDashboardContentTitle">update product</h>
             </div>
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><FavoriteIcon /></span>
-              <h className="adminDashboardContentTitle">create product review</h>
+              <h className="adminDashboardContentTitle">all orders</h>
+            </div>
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><EmailIcon /></span>
+              <h className="adminDashboardContentTitle">messages</h>
             </div>
           </div>
         </div>
@@ -70,11 +77,15 @@ const AdminDashboard = () => {
             );
           })}
           </Routes> */}
-          <NewProduct/>
+          {/* <NewProduct/>
           <CreateProduct />
           <DeleteProduct/>
-          <AccountDetails />
-          <UpdateProduct />
+          <AccountDetails /> */}
+          {/* <MyOrders/> */}
+          {/* <AccountDetails /> */}
+          {/* <UpdateProduct /> */}
+          {/* <Messages/> */}
+          <NoMessages/>
         </div>
       </div>
     </>
