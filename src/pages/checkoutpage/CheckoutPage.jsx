@@ -91,14 +91,18 @@ const CheckoutPage = () => {
             <img src={yam} alt="" className="checkoutOrderProduct" />
             <div className="checkoutOrderItemsCont">
               <div className="checkoutOrderItems">
-                <h1>the fault in our starts</h1>
-                <p>by john green</p>
+                <div className="checkoutOrderItemTitles">
+                  <h1>the fault in our stars</h1>
+                  <p>by john green</p>
+                </div>
+                <div className="checkoutOrderNumbers">
+                  <p>4</p>
+                </div>
               </div>
-              <div className="checkoutOrderNumbers">4</div>
-            </div>
-            <div className="checkoutItemsRemove">
-              <h1>remove</h1>
-              <span>N4000</span>
+              <div className="checkoutItemsRemove">
+                <h1>remove</h1>
+                <span>N4000</span>
+              </div>
             </div>
           </div>
         </div>
