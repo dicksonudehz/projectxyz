@@ -28,10 +28,15 @@ const AddToCart = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "grey", marginRight:"10px", marginLeft:"10px", 
-      color:"blue",zIndex:"999999"
-
-      }}
+        style={{
+          ...style,
+          display: "block",
+          background: "grey",
+          marginRight: "10px",
+          marginLeft: "10px",
+          color: "blue",
+          zIndex: "999999",
+        }}
         onClick={onClick}
       />
     );
@@ -95,13 +100,15 @@ const AddToCart = () => {
             <div className="itemDescContainer">
               <img src={custard} alt="" className="itemImage" />
               <div className="addToCartItemDesc">
-                <p>Modern custard are good for our body and soul</p>
-                <p>Seller: KIngsley furniture</p>
+                <div className="addToCartTitleItems">
+                  <p>Modern custard are good for our body and soul</p>
+                  <p>Seller: KIngsley furniture</p>
+                  <h3>few units left</h3>
+                </div>
                 <div className="priceContainer">
                   <h1>N250,000</h1>
                   <h2>294,000</h2>
                 </div>
-                <h3>few units left</h3>
               </div>
             </div>
             <div className="controlsContainer">
@@ -109,11 +116,12 @@ const AddToCart = () => {
                 <Delete className="deleteItem" />
                 <h3>remover</h3>
               </div>
-              <div className="increementNav">
+              <button className="soldOut">sold out</button>
+              {/* <div className="increementNav">
                 <h1>-</h1>
                 <h3>6</h3>
                 <h1>+</h1>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="callCheckoutContainer">
@@ -124,13 +132,14 @@ const AddToCart = () => {
             <h5>Returns are easy</h5>
             <p>
               Free return with 15 days for Official Store items and 7 days for
-              other eligible items
-              <br />
-              Free return with 15 days for Official Store items and 7 days for
-              other eligible items
-              <br />
-              Free return with 15 days for Official Store items and 7 days for
-              other eligible items
+              other eligible items other eligible items Free return with 15 days
+              for Official Store items and 7 days for other eligible items Free
+              return with 15 days for Official Store items and 7 days for other
+              eligible items other eligible items Free return with 15 days for
+              Official Store items and 7 days for other eligible items Free
+              return with 15 days for Official Store items and 7 days for other
+              eligible items other eligible items Free return with 15 days for
+              Official Store items and 7 days for other eligible items
             </p>
           </div>
           <div className="topSellingContainer">

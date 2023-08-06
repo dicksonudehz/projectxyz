@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding-left: 50px;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -81,6 +81,12 @@
 }
 .addToCartItemDesc {
   padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 100px;
+  width: 100%;
 }
 .addToCartItemDesc p {
   padding-top: 0;
@@ -89,8 +95,10 @@
 }
 .priceContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .priceContainer h1 {
   font-size: 16px;
@@ -103,17 +111,29 @@
   text-decoration: line-through;
 }
 .addToCartItemDesc h3 {
-  margin-top: -30px;
   font-size: 14px;
   font-weight: normal;
 }
+
 .controlsContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 15px;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-right: 100px;
+}
+.soldOut{
+  padding: 10px 50px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
 }
 .deleteContainer {
   display: flex;
@@ -178,6 +198,7 @@
 .returnPolicy {
   padding-left: 50px;
   padding-top: 20px;
+  padding-right: 100px;
 }
 .returnPolicy h5 {
   font-weight: 600;
