@@ -3,7 +3,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./topbar.css";
 import { Link } from "react-router-dom";
@@ -16,7 +15,7 @@ import { HashLink as Links } from "react-router-hash-link";
 
 
 function Topbar({ name, ...props }) {
-  const { cartItems } = useSelector((state) => state.cart);
+  const { cartItem } = useSelector((state) => state.CartAddItem);
 
   const [show, setShow] = useState(false);
 
@@ -65,10 +64,10 @@ function Topbar({ name, ...props }) {
         <div className="rightTopBarContainer">
           <div className="cart">
             <Link to="/addtocart">
-              {/* Cart{" "} */}
+            {" "}
               <ShoppingCartIcon className="cartIcon" />
               <div className="cartPRice">
-                {cartItems.reduce((acc, item) => acc + item.qty, 7)}
+                {cartItem.reduce((acc, item) => acc + item.qty, 7)} 
               </div>
             </Link>
           </div>
@@ -181,7 +180,7 @@ function Topbar({ name, ...props }) {
                   <Links to="/userdashboard">My Account</Links>
                 </li>
                 <li>
-                  <Links to="/checkoutpage">checkoutpage</Links>
+                  <Links to="/admindashboard">admin dashboard</Links>
                 </li>
                 <li>Orders</li>
                 <li>inbox</li>

@@ -4,9 +4,9 @@ const cartItemFromStorage = localStorage.getItem("cartItem")
   ? JSON.parse(localStorage.getItem("cartItem"))
   : [];
 const cartSlice = createSlice({
-  name: "cart",
+  name: "CartAddItem",
   initialState: {
-    cartItems: cartItemFromStorage,
+    cartItem: cartItemFromStorage,
     shippingAddress: {},
   },
   reducers: {
@@ -19,15 +19,17 @@ const cartSlice = createSlice({
       if (existingItem) {
         existingItem.qty += item.qty;
       } else {
-        state.cartItems.push(item);
+        state.cartItem.push(item);
       }
     },
+
     removeItemFromCart: (state, action) => {
-      const id = action.payload; 
-      state.cartItems = state.cartItems.filter(
+      const id = action.payload;
+      state.cartItem = state.cartItem.filter(
         (cartItem) => cartItem.product !== id
       );
     },
+
     saveShippingAddress: (state, action) => {
       state.shippingAddress = action.payload;
     },
@@ -37,7 +39,8 @@ const cartSlice = createSlice({
   },
 });
 export const {
-  addToCart, 
+  CartAddItem,
+  addToCart,
   removeItemFromCart,
   saveShippingAddress,
   savePaymentMethod,

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const registerSlice = createSlice({
@@ -30,7 +30,7 @@ const registerSlice = createSlice({
 export const { registerRequest, registerSuccess, registerFailure } =
   registerSlice.actions;
 
-export const register =
+export const register = createAsyncThunk(
   (name, email, password, address) => async (dispatch) => {
     try {
       dispatch(registerRequest());
@@ -47,14 +47,15 @@ export const register =
         config
       );
 
-      dispatch(registerSuccess(data));
+      dispatch(registerSuccess(data.register));
     } catch (err) {
       const message =
         err.response && err.response.data.message
           ? err.response.data.message
           : err.message;
       dispatch(registerFailure(message));
-    }
-  };
+    } 
+  }
+);
 
 export default registerSlice.reducer;

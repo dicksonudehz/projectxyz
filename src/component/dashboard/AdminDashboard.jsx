@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import BreadcrumSlider from "../breadcrumslider/BreadcrumSlider";
 import "./admindashboard.css";
 import { adminDashboardData } from "../../pages/expressorder/productData";
@@ -25,6 +25,11 @@ import Messages from "./Messages";
 import NoMessages from "./NoMessages";
 
 const AdminDashboard = () => {
+  const [activeSection, setActiveSection] = useState('')
+
+  const handleNavigation = (section) => {
+    setActiveSection(section)
+  }
   return (
     <>
       <BreadcrumSlider />
@@ -39,30 +44,32 @@ const AdminDashboard = () => {
           <div className="adminDashboardItems">
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><DashboardIcon /></span>
-              <h className="adminDashboardContentTitle">admin profile</h>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("accountDetails")}>admin profile</h>
             </div>
-            <Links to={CreateProduct}>
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><EditLocationAltIcon /></span>
-              <h className="adminDashboardContentTitle">create product</h>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("createProduct")}>create product</h>
             </div>
-            </Links>
             
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><DashboardIcon /></span>
-              <h className="adminDashboardContentTitle">delete product</h>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("deleteProduct")}>delete product</h>
             </div>
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><PlaylistAddIcon /></span>
-              <h className="adminDashboardContentTitle">update product</h>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("updateProduct")}>update product</h>
             </div>
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><FavoriteIcon /></span>
-              <h className="adminDashboardContentTitle">all orders</h>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("myOrders")}>all orders</h>
             </div>
             <div className="adminDashboardContent">
               <span className="adminDashboardIcon"><EmailIcon /></span>
-              <h className="adminDashboardContentTitle">messages</h>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("message")}>messages</h>
+            </div>
+            <div className="adminDashboardContent">
+              <span className="adminDashboardIcon"><EmailIcon /></span>
+              <h className="adminDashboardContentTitle" onClick={() => handleNavigation("nomessage")}>no message</h>
             </div>
           </div>
         </div>
@@ -77,6 +84,14 @@ const AdminDashboard = () => {
             );
           })}
           </Routes> */}
+          {activeSection === 'newProduct' && <NewProduct/>}
+          {activeSection === 'createProduct' &&  <CreateProduct />}
+          {activeSection === 'deleteProduct' && <DeleteProduct/>}
+          {activeSection === 'accountDetails' &&  <AccountDetails /> }
+          {activeSection === 'myOrders' && <MyOrders/>}
+          {activeSection === 'updateProduct' && <UpdateProduct />}
+          {activeSection === 'message' && <Messages/>}
+          {activeSection === 'nomessage' && <NoMessages/>}
           {/* <NewProduct/>
           <CreateProduct />
           <DeleteProduct/>
@@ -85,7 +100,6 @@ const AdminDashboard = () => {
           {/* <AccountDetails /> */}
           {/* <UpdateProduct /> */}
           {/* <Messages/> */}
-          <NoMessages/>
         </div>
       </div>
     </>

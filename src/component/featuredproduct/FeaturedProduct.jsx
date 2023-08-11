@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./featuredproduct.css";
-import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
-import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
-import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 // import { previewProductData } from "../../pages/expressorder/productData";
 import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import malta from "../../images/malta.jpg";
 import { Link } from "react-router-dom";
 import { topSixProduct } from "../../slice/topSixProductSlice";
+import { CartAddItem } from "../../slice/addToCartSlice";
+import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
+import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
+import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 const FeaturedProduct = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,16 @@ const FeaturedProduct = () => {
     data: pData,
     error: pError,
   } = useSelector((state) => state.topSixProduct);
+
+  // const {
+  //   loading: AddToCartLoading,
+  //   data: AddToCartData,
+  //   error: AddToCartError,
+  // } = useSelector((state) => state.CartAddItem);
+
+  const handleAddToCart = (product) => {
+    dispatch(CartAddItem(product));
+  };
 
   useEffect(() => {
     dispatch(topSixProduct());
@@ -99,7 +110,7 @@ const FeaturedProduct = () => {
                         </div>
                         <div className="mainProInfoCon">
                           <img src={product.image} alt="" className="proImg" />
-                          <button className="addToCart">add to cart</button>
+                          <button className="addToCart" >add to cart</button>
                           {/* <button className="addToCart">
                           <ShoppingCartOutlinedIcon />
                           </button> */}

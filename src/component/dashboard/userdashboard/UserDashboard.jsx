@@ -16,8 +16,17 @@ import Inbox from "./Inbox";
 import RecentlyViewed from "./RecentlyViewed";
 import SavedItems from "./SavedItems";
 import Voucher from "./Voucher";
+import MyOrders from "../MyOrders";
+
+import { useState } from "react";
 
 const UserDashboard = () => {
+  const [activesection, setActiveSection] = useState("useDetails");
+
+  const handleNavigation = (section) => {
+    setActiveSection(section);
+  };
+
   return (
     <>
       <BreadcrumSlider />
@@ -34,43 +43,68 @@ const UserDashboard = () => {
               <span className="useradminDashboardIcon">
                 <DashboardIcon />
               </span>
-              <h className="useradminDashboardContentTitle">user profile</h>
+              <h
+                className="useradminDashboardContentTitle"
+                onClick={() => handleNavigation("useDetails")}
+              >
+                user profile
+              </h>
             </div>
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
                 <EditLocationAltIcon />
               </span>
-              <h className="useradminDashboardContentTitle">my orders</h>
+              <h
+                className="useradminDashboardContentTitle"
+                onClick={() => handleNavigation("myOrders")}
+              >
+                my orders
+              </h>
             </div>
 
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
                 <DashboardIcon />
               </span>
-              <h className="useradminDashboardContentTitle"> inbox</h>
+              <h
+                className="useradminDashboardContentTitle"
+                onClick={() => handleNavigation("inbox")}
+              >
+                inbox
+              </h>
             </div>
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
                 <PlaylistAddIcon />
               </span>
-              <h className="useradminDashboardContentTitle">recently viewed</h>
+              <h className="useradminDashboardContentTitle" onClick={() => handleNavigation("recentlyViewed")}>recently viewed</h>
             </div>
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
                 <FavoriteIcon />
               </span>
-              <h className="useradminDashboardContentTitle">saved items</h>
+              <h
+                className="useradminDashboardContentTitle"
+                onClick={() => handleNavigation("savedItems")}
+              >
+                saved items
+              </h>
             </div>
+
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
                 <EmailIcon />
               </span>
-              <h className="useradminDashboardContentTitle">voucher</h>
+              <h
+                className="useradminDashboardContentTitle"
+                onClick={() => handleNavigation("voucher")}
+              >
+                voucher
+              </h>
             </div>
           </div>
         </div>
         <div className="useradminRightDashboardContainer">
-          {/* <MyOrders /> */}
           {/* <Routes>
           {useradminDashboardData.map((data, index) => {
             return (
@@ -84,11 +118,13 @@ const UserDashboard = () => {
           <CreateProduct />
           <DeleteProduct/>
           <AccountDetails /> */}
-          <Voucher/>
-          {/* <SavedItems /> */}
-          {/* <RecentlyViewed /> */}
-          {/* <Inbox/> */}
-          {/* <UserDetails/> */}
+          {activesection === 'myOrders' &&  <MyOrders /> }
+
+          {activesection === "voucher" && <Voucher />}
+          {activesection === "savedItems" && <SavedItems />}
+          {activesection === "recentlyViewed" && <RecentlyViewed />}
+          {activesection === "inbox" && <Inbox />}
+          {activesection === "useDetails" && <UserDetails />}
         </div>
       </div>
     </>
