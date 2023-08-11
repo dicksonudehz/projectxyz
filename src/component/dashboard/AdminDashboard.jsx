@@ -25,7 +25,7 @@ import Messages from "./Messages";
 import NoMessages from "./NoMessages";
 
 const AdminDashboard = () => {
-  const [activeSection, setActiveSection] = useState('')
+  const [activeSection, setActiveSection] = useState("accountDetails")
 
   const handleNavigation = (section) => {
     setActiveSection(section)
