@@ -27,7 +27,7 @@ const Login = () => {
         position: toast.POSITION.TOP_RIGHT,
       });
     } else {
-      dispatch(login(email, password));
+      dispatch(login({email:email, password:password}));
       setEmail("");
       setPassword("");
     }
@@ -59,8 +59,8 @@ const Login = () => {
           <ToastContainer />
           <form
             action=""
-            onSubmit={HandleSubmit}
             className="loginContainerForm"
+            onSubmit={HandleSubmit}
           >
             <input
               type="email"

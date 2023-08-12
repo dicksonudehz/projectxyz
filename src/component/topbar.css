@@ -345,42 +345,52 @@ a:-webkit-any-link:hover{
 
 }
 .loginHere{
-  padding: 5px 35px;
-  border: 1px solid rgb(211, 211, 211);
+  padding: 15px 40px;
+  width: 60%;
+  border: 1px solid #dadada;
+  background-color: rgb(0, 0, 165);
   border-radius: 5px;
-  background: transparent;
   text-transform: capitalize;
   font-weight: 600;
-  color: rgb(190, 190, 190);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-transform: capitalize;
 }
 .loginHere:hover{
-  padding: 5px 35px;
-  border: 1px solid  #cfcfcf;;
+  padding: 15px 40px;
+  width: 60%;
+  border: 1px solid #dadada;
+  background-color: rgb(0, 0, 165);
   border-radius: 5px;
   text-transform: capitalize;
   font-weight: 600;
   color: rgb(255, 255, 255);
-  background-color: #cfcfcf;
-  transform-origin: 0.5s all;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 .signupHere{
-  padding: 5px 35px;
+  padding: 15px 40px;
+  width: 60%;
   border: 1px solid #dadada;
+  background-color: rgb(0, 0, 165);
   border-radius: 5px;
   text-transform: capitalize;
   font-weight: 600;
   color: rgb(255, 255, 255);
-  background-color: #dadada;
-  transform-origin: 0.5s all;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 .signupHere:hover{
-  padding: 5px 35px;
-  border: 1px solid rgb(211, 211, 211);
+  padding: 15px 40px;
+  width: 60%;
+  border: 1px solid #dadada;
+  background-color: rgb(0, 0, 165);
   border-radius: 5px;
-  background: transparent;
   text-transform: capitalize;
   font-weight: 600;
-  color: rgb(190, 190, 190);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
 
@@ -398,7 +408,7 @@ a:-webkit-any-link:hover{
   text-transform: capitalize;
   font-weight: 600;
   color: rgb(255, 255, 255);
-  background-color: #dadada;;
+  background-color: #f80000;
 }
 .signupGoogle:hover{
   padding: 10px 40px;
@@ -406,7 +416,7 @@ a:-webkit-any-link:hover{
   border-radius: 5px;
   text-transform: capitalize;
   font-weight: 600;
-  color: rgb(190, 190, 190);
+  color: #f80000;
   background-color: white;
   transition: all 1s;
 }

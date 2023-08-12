@@ -13,33 +13,41 @@ const Register = () => {
 
   const { loading, data, error } = useSelector((state) => state.register);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [address, setAddress] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
 
-  const HandleSubmit = (event) => {
-    event.preventDefault();
-    console.log(name)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(address);
     if (!name || !email || !password || !address) {
       toast.error("All fields are required", {
         position: toast.POSITION.TOP_RIGHT,
       });
     } else {
-      dispatch(register(name, email, password, address));
-      setName('');
-      setEmail('');
-      setPassword('');
-      setAddress('');
+      dispatch(
+        register({
+          name: name,
+          email: email,
+          password: password,
+          address: address,
+        })
+      );
+      setName("");
+      setEmail("");
+      setPassword("");
+      setAddress("");
     }
   };
+  console.log(handleSubmit());
   useEffect(() => {
     if (data) {
       toast.success("registration is succesfull", {
         position: toast.POSITION.TOP_RIGHT,
       });
       setTimeout(() => {
-        navigate('/Login');
+        navigate("/Login");
       }, 3000);
     } else if (error) {
       toast.error(error, {
@@ -52,7 +60,7 @@ const Register = () => {
     <>
       <div className="signupContainer">
         <ToastContainer />
-        <form action="" onSubmit={HandleSubmit} className="registerForm">
+        <form action="" onSubmit={handleSubmit()} className="registerForm">
           <input
             type="text"
             className="signUpinputField"
@@ -84,7 +92,9 @@ const Register = () => {
           {loading ? (
             <Loader />
           ) : (
-            <button className="signInButton" type="submit">create an account</button>
+            <button className="signInButton" type="submit">
+              create an account
+            </button>
           )}
         </form>
         <p className="existingAccount">

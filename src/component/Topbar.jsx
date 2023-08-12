@@ -9,10 +9,8 @@ import { Link } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import { useSelector } from "react-redux";
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { HashLink as Links } from "react-router-hash-link";
-
-
 
 function Topbar({ name, ...props }) {
   const { cartItem } = useSelector((state) => state.CartAddItem);
@@ -25,7 +23,7 @@ function Topbar({ name, ...props }) {
   const [openSidebar, setOpenSidebar] = useState(false);
   let menuRef = useRef();
 
-  const[rightSidebar, setRightSidebar] = useState(false)
+  const [rightSidebar, setRightSidebar] = useState(false);
 
   const [showToogle, setShowToogle] = useState(true);
 
@@ -64,10 +62,10 @@ function Topbar({ name, ...props }) {
         <div className="rightTopBarContainer">
           <div className="cart">
             <Link to="/addtocart">
-            {" "}
+              {" "}
               <ShoppingCartIcon className="cartIcon" />
               <div className="cartPRice">
-                {cartItem.reduce((acc, item) => acc + item.qty, 7)} 
+                {cartItem.reduce((acc, item) => acc + item.qty, 7)}
               </div>
             </Link>
           </div>
@@ -169,12 +167,17 @@ function Topbar({ name, ...props }) {
               </li>
             </ul>
           </div>
-          <div className="rightBottomLeft"  >
-            <div className="openToogle" onClick={handleRightSideOpen} >
-
-            <span className="deliveryDate"><PersonOutlineOutlinedIcon/> Hi, Dickson</span>
+          <div className="rightBottomLeft">
+            <div className="openToogle" onClick={handleRightSideOpen}>
+              <span className="deliveryDate">
+                <PersonOutlineOutlinedIcon /> Hi, Dickson
+              </span>
             </div>
-            <div className= {`acountDetailsDropDownItems ${rightSidebar ? "activestate" : "inactive"}` }>
+            <div
+              className={`acountDetailsDropDownItems ${
+                rightSidebar ? "activestate" : "inactive"
+              }`}
+            >
               <ul>
                 <li>
                   <Links to="/userdashboard">My Account</Links>

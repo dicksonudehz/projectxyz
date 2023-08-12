@@ -47,7 +47,7 @@ export const register = createAsyncThunk(
         config
       );
 
-      dispatch(registerSuccess(data.register));
+      dispatch(registerSuccess(data));
     } catch (err) {
       const message =
         err.response && err.response.data.message
