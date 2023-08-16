@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const BestSellerProductSlice = createSlice({
-
   name: "BestSellerProduct",
   initialState: {
     loading: false,
@@ -39,7 +38,7 @@ export const BestSellerProduct = () => async (dispatch) => {
     dispatch(bestSellerProductRequest);
     const { data } = await axios.get(`https://delightful-spacesuit-frog.cyclic.app/api/products/best`);
     dispatch(bestSellerProductSuccess(data.products));
-  console.log('this is from best selling product')
+  console.log(data.products, 'this is the best selling product')
 
   } catch (err) {
     const message =
@@ -49,4 +48,5 @@ export const BestSellerProduct = () => async (dispatch) => {
     dispatch(bestSellerProductFailure(message));
   }
 };
+
 export default BestSellerProductSlice.reducer;

@@ -19,8 +19,8 @@ const BestSeller = () => {
   );
 
   useEffect(() => {
-    dispatch(BestSellerProduct);
-  });
+    dispatch(BestSellerProduct());
+  }, [dispatch]);
   return (
     <>
       <BreadcrumSlider />
@@ -58,7 +58,7 @@ const BestSeller = () => {
           </div>
           <div className="bestSellerProductContainer">
             {BLoading && <p>loading...</p>}
-            {BError && <p>error...</p>}
+            {BError && <p>There is an error...</p>}
             {BData && BData.map((product, index) => {
               return(
                 <>

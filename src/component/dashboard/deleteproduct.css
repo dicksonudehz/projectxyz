@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 20px;
+    /* margin: 20px; */
     overflow-y: scroll;
+    height: calc(94vh );
   }
   .deleteProductContainer {
     position: relative;

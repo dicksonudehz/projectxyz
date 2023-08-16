@@ -40,14 +40,13 @@ const Register = () => {
       setAddress("");
     }
   };
-  console.log(handleSubmit());
   useEffect(() => {
     if (data) {
-      toast.success("registration is succesfull", {
+      toast.success("registration is Succesfull", {
         position: toast.POSITION.TOP_RIGHT,
       });
       setTimeout(() => {
-        navigate("/Login");
+        navigate("/AccountDetails");
       }, 3000);
     } else if (error) {
       toast.error(error, {
@@ -60,7 +59,7 @@ const Register = () => {
     <>
       <div className="signupContainer">
         <ToastContainer />
-        <form action="" onSubmit={handleSubmit()} className="registerForm">
+        <form action="" onSubmit={(e)=> handleSubmit} className="registerForm">
           <input
             type="text"
             className="signUpinputField"

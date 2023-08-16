@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./deleteproduct.css";
-import custard from "../../images/custard.jpg";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
@@ -12,7 +11,7 @@ const DeleteProduct = () => {
     (state) => state.fetchAllProduct
   );
   useEffect(() => {
-    dispatch(fetchAllProduct);
+    dispatch(fetchAllProduct());
   }, [dispatch]);
   return (
     <>
