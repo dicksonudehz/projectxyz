@@ -46,8 +46,8 @@ export const register = createAsyncThunk(
         { name, email, password, address },
         config
       );
-
       dispatch(registerSuccess(data));
+      console.log(data)
     } catch (err) {
       const message =
         err.response && err.response.data.message

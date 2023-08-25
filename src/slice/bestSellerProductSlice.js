@@ -27,6 +27,7 @@ const BestSellerProductSlice = createSlice({
     },
   },
 });
+
 export const {
   bestSellerProductRequest,
   bestSellerProductSuccess,
@@ -36,10 +37,10 @@ export const {
 export const BestSellerProduct = () => async (dispatch) => {
   try {
     dispatch(bestSellerProductRequest);
-    const { data } = await axios.get(`https://delightful-spacesuit-frog.cyclic.app/api/products/best`);
+    const { data } = await axios.get(
+      `https://delightful-spacesuit-frog.cyclic.app/api/products/best`
+    );
     dispatch(bestSellerProductSuccess(data.products));
-  console.log(data.products, 'this is the best selling product')
-
   } catch (err) {
     const message =
       err.response && err.response.data.message

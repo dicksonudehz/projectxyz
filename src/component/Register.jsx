@@ -4,7 +4,7 @@ import "./register.css";
 import register from "../slice/registerSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast} from "react-toastify";
 import Loader from "../slice/Loader";
 
 const Register = () => {
@@ -20,11 +20,15 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(address);
     if (!name || !email || !password || !address) {
       toast.error("All fields are required", {
         position: toast.POSITION.TOP_RIGHT,
       });
+      console.log(name)
+      console.log(email)
+      console.log(password)
+      console.log(address)
+
     } else {
       dispatch(
         register({
@@ -34,32 +38,37 @@ const Register = () => {
           address: address,
         })
       );
-      setName("");
-      setEmail("");
-      setPassword("");
-      setAddress("");
+      // setName("");
+      // setEmail("");
+      // setPassword("");
+      // setAddress("");
     }
   };
+
   useEffect(() => {
     if (data) {
-      toast.success("registration is Succesfull", {
+      console.log(data)
+      toast.success("registration is Successful", {
         position: toast.POSITION.TOP_RIGHT,
       });
-      setTimeout(() => {
-        navigate("/AccountDetails");
-      }, 3000);
+      // setTimeout(() => {
+      //   // navigate("/");
+      // }, 3000);
     } else if (error) {
       toast.error(error, {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
-  }, [[data, error, navigate]]);
+  }, [data, error, navigate]);
 
   return (
     <>
       <div className="signupContainer">
         <ToastContainer />
-        <form action="" onSubmit={(e)=> handleSubmit} className="registerForm">
+        <form
+          onSubmit={(e) => handleSubmit}
+          className="registerForm"
+        >
           <input
             type="text"
             className="signUpinputField"

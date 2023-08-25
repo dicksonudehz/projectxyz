@@ -4,7 +4,7 @@ import fetchAllProductSlice from "../slice/fetchAllProductSlice";
 import createProductReducer from "../slice/createProductSlice";
 import registerReducer from "../slice/registerSlice";
 import loginReducer from "../slice/LoginSlice";
-import cartReducer from "../slice/addToCartSlice";
+import cartSlice from "../slice/addToCartSlice";
 import singleProductSlice from "../slice/singleProductSlice";
 import relatedProductSlice from "../slice/relatedProductSlice";
 import newProductReducer from "../slice/newProductSlice";
@@ -17,7 +17,7 @@ const reducer = {
   createProduct: createProductReducer,
   register: registerReducer,
   login: loginReducer,
-  CartAddItem: cartReducer,
+  CartAddItem: cartSlice,
   singleProduct: singleProductSlice,
   relatedProduct: relatedProductSlice,
   newProduct: newProductReducer,

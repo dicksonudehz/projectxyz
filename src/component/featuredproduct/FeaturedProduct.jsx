@@ -12,7 +12,7 @@ import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeft
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-const FeaturedProduct = () => {
+const FeaturedProduct = ({ name, price, quantity, totalPrice }) => {
   const dispatch = useDispatch();
 
   const {
@@ -21,16 +21,12 @@ const FeaturedProduct = () => {
     error: pError,
   } = useSelector((state) => state.topSixProduct);
 
-  // const {
-  //   loading: AddToCartLoading,
-  //   data: AddToCartData,
-  //   error: AddToCartError,
-  // } = useSelector((state) => state.CartAddItem);
+  const addToCartItems = useSelector((state) => state.CartAddItem);
+  console.log(addToCartItems);
 
-  const handleAddToCart = (product) => {
-    dispatch(CartAddItem(product));
+  const handleAddToCart = () => {
+    dispatch(addToCartItems);
   };
-
   useEffect(() => {
     dispatch(topSixProduct());
   }, [dispatch]);
@@ -69,7 +65,7 @@ const FeaturedProduct = () => {
             </div>
             <div className="featureProConBottom">
               {pLoading && <p>loading...</p>}
-              {pError && <p>error: {pError} </p>}
+              {pError && <p>error</p>}
 
               <img
                 src={malta}
@@ -104,23 +100,25 @@ const FeaturedProduct = () => {
                 return (
                   <>
                     <div className="mainProContainer" key={index}>
-                      <Link to={`/singleproduct/${product._id}`}>
-                        <div className="mainProIcons">
-                          <SearchOutlinedIcon className="mainProIcon" />
-                        </div>
-                        <div className="mainProInfoCon">
-                          <img src={product.image} alt="" className="proImg" />
-                          <button className="addToCart" >add to cart</button>
-                          {/* <button className="addToCart">
+                      {/* <Link to={`/singleproduct/${product._id}`}> */}
+                      <div className="mainProIcons">
+                        <SearchOutlinedIcon className="mainProIcon" />
+                      </div>
+                      <div className="mainProInfoCon">
+                        <img src={product.image} alt="" className="proImg" />
+                        <button className="addToCart" onClick={handleAddToCart}>
+                          add to cart
+                        </button>
+                        {/* <button className="addToCart">
                           <ShoppingCartOutlinedIcon />
                           </button> */}
-                          <div className="mainProTitle">
-                            <h1 className="proTitle">{product.name}</h1>
-                            <p className="proPrice">{product.price}</p>
-                            {/* <button className="" onClick={() =>HandleClick(product)}>view</button> */}
-                          </div>
+                        <div className="mainProTitle">
+                          <h1 className="proTitle">{product.name}</h1>
+                          <p className="proPrice">{product.price}</p>
+                          {/* <button className="" onClick={() =>HandleClick(product)}>view</button> */}
                         </div>
-                      </Link>
+                      </div>
+                      {/* </Link> */}
                     </div>
                     {/* </Link> */}
                   </>

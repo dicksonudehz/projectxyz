@@ -21,7 +21,7 @@ const Login = () => {
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    console.log(email)
+    
     if (!email || !password) {
       toast.error("All fields are required", {
         position: toast.POSITION.TOP_RIGHT,
@@ -39,7 +39,7 @@ const Login = () => {
         position: toast.POSITION.TOP_RIGHT,
       });
       setTimeout(() => {
-        navigate("/Home");
+        navigate("/AccountDetails");
       }, 3000);
     } else if (lerror) {
       toast.lerror(lerror, {

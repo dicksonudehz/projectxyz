@@ -103,7 +103,7 @@ function Topbar({ name, ...props }) {
                   </div>
                 </Offcanvas.Body>
 
-                {showToogle ? <Login /> : <Register />}
+                {showToogle ? <Login /> : <Register name = {name} />}
               </div>
             </Offcanvas>
           ))}
@@ -170,7 +170,7 @@ function Topbar({ name, ...props }) {
           <div className="rightBottomLeft">
             <div className="openToogle" onClick={handleRightSideOpen}>
               <span className="deliveryDate">
-                <PersonOutlineOutlinedIcon /> Hi, Dickson
+                <PersonOutlineOutlinedIcon /> Hi, {name}
               </span>
             </div>
             <div
