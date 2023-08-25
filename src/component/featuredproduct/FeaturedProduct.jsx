@@ -22,7 +22,7 @@ const FeaturedProduct = ({ name, price, quantity, totalPrice }) => {
   } = useSelector((state) => state.topSixProduct);
 
   const addToCartItems = useSelector((state) => state.CartAddItem);
-  console.log(addToCartItems);
+
 
   const handleAddToCart = () => {
     dispatch(addToCartItems);
