@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import BreadcrumSlider from "../../component/breadcrumslider/BreadcrumSlider";
 import custard from "../../images/custard.jpg";
 import { Call, Delete } from "@mui/icons-material";
@@ -9,9 +9,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { TopSales } from "../../slice/topSaleSlice";
+import { removeItemFromCart } from "../../slice/addToCartSlice";
+import { addToCart } from "../../slice/addToCartSlice";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddToCart = () => {
   const dispatch = useDispatch();
+  const item = useSelector((state) => state.cart.cartItem);
+
+  const itemQty = Number(
+    item.reduce((acc, item) => acc + item.price * item.qty, 0)
+  ).toLocaleString();
 
   const {
     loading: CLoading,
@@ -19,12 +27,24 @@ const AddToCart = () => {
     error: CError,
   } = useSelector((state) => state.TopSales);
 
+  const handleDelete = (id) => {
+    dispatch(removeItemFromCart(id));
+    toast.success("product remove successfully");
+  };
+
+  const handleIncrement = () => {
+  };
+  const handleDecrement = (id) => {
+    dispatch(removeItemFromCart(id));
+  };
+
   useEffect(() => {
     dispatch(TopSales());
   }, [dispatch]);
 
   function Arrow(props) {
     const { className, style, onClick } = props;
+
     return (
       <div
         className={className}
@@ -80,53 +100,76 @@ const AddToCart = () => {
 
   return (
     <>
+      <ToastContainer />
       <BreadcrumSlider />
       <div className="addToCartContainer">
         <div className="cartSummary">
           <h1>cart summary</h1>
         </div>
+
         <div className="subTotalContainer">
           <div className="subTotalHeader">
             <h3>subtotal</h3>
-            <h1>N 40,000</h1>
+            <h1>
+              N{" "}
+              {Number(
+                item.reduce((acc, item) => acc + item.price * item.qty, 0)
+              ).toLocaleString()}
+            </h1>
           </div>
           <div className="subTotal-SubTitle">
             <p>Delivery fees not included yet.</p>
           </div>
           <div className="cartItemsTitle">
-            <h3>cart(3)</h3>
+            <h3>cart({item.length})</h3>
           </div>
-          <div className="itemContainer">
-            <div className="itemDescContainer">
-              <img src={custard} alt="" className="itemImage" />
-              <div className="addToCartItemDesc">
-                <div className="addToCartTitleItems">
-                  <p>Modern custard are good for our body and soul</p>
-                  <p>Seller: KIngsley furniture</p>
-                  <h3>few units left</h3>
+          {item &&
+            item.map((product, index) => (
+              <div className="itemContainer" key={index}>
+                <div className="itemDescContainer">
+                  <img src={product.image} alt="" className="itemImage" />
+                  <div className="addToCartItemDesc">
+                    <div className="addToCartTitleItems">
+                      <p> {product.name}</p>
+                      <p>Seller: KIngsley furniture</p>
+                      <p>
+                        Number of items: <b>{product.qty}</b>
+                      </p>
+                      <h3>
+                        <span>Amount: </span> <b>N{product.price}</b>
+                      </h3>
+                      <h3>
+                        <b>Sub-Total: N{itemQty}</b>
+                      </h3>
+                    </div>
+                  </div>
                 </div>
-                <div className="priceContainer">
-                  <h1>N250,000</h1>
-                  <h2>294,000</h2>
+                <div className="controlsContainer">
+                  <div
+                    className="deleteContainer"
+                    onClick={() => handleDelete(product.product)}
+                  >
+                    <Delete className="deleteItem" />
+                    <h3>remover</h3>
+                  </div>
+                  <div className="incrementContainer">
+                    <div className="increementNav">
+                      <h1 onClick={handleDecrement}>-</h1>
+                      <h3>
+                        <b>{item.qty}</b>
+                      </h3>
+                      <h1 onClick={handleIncrement}>+</h1>
+                    </div>
+                  </div>
+                  <span className="soldOut">
+                    {item ? "product available" : "sold out"}
+                  </span>
                 </div>
               </div>
-            </div>
-            <div className="controlsContainer">
-              <div className="deleteContainer">
-                <Delete className="deleteItem" />
-                <h3>remover</h3>
-              </div>
-              <button className="soldOut">sold out</button>
-              {/* <div className="increementNav">
-                <h1>-</h1>
-                <h3>6</h3>
-                <h1>+</h1>
-              </div> */}
-            </div>
-          </div>
+            ))}
           <div className="callCheckoutContainer">
             <Call className="addToCartCall" />
-            <button className="checkout">checkout (N456,000)</button>
+            <button className="checkout">checkout</button>
           </div>
           <div className="returnPolicy">
             <h5>Returns are easy</h5>
@@ -142,6 +185,7 @@ const AddToCart = () => {
               Official Store items and 7 days for other eligible items
             </p>
           </div>
+
           <div className="topSellingContainer">
             <h1>top selling product</h1>
             <Slider {...settings} className="topSellingSlider">

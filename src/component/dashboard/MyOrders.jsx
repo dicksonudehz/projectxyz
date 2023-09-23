@@ -1,7 +1,14 @@
 import "./myorders.css";
 import custard from "../../images/custard.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 const MyOrders = () => {
+  const dispatch = useDispatch();
+  const item = useSelector((state) => state.cart.cartItem);
+
+  console.log(item)
+
   return (
     <>
       <div className="orderContainer">
@@ -9,51 +16,41 @@ const MyOrders = () => {
           <h1>my Orders</h1>
         </div>
         <hr className="lineDivider" />
-        <div className="productOrderContainer">
-          <div className="mainProduct">
-            <div className="productOrderitem">
-              <span className="productQuantity">1</span>
-              <img src={custard} alt="" className="productOrderimg" />
+        {item &&
+          item.map((product, index) => (
+            <div className="productOrderContainer" key={index}>
+              <div className="mainProduct">
+                <div className="productOrderitem">
+                  <span className="productQuantity">{product.qty}</span>
+                  <img src={product.image} alt="" className="productOrderimg" />
+                </div>
+                <div className="productTitleItems">
+                  <h1>{product.name}</h1>
+                  <span>best to be taken in the morning</span>
+                </div>
+              </div>
+              <div className="productPrice">
+                <span>price</span>
+                <p>N{product.price}</p>
+                <span >sub-total</span>
+                <p  className="itemSubTotalPrice">
+                N{" "}
+              {Number(
+                item.reduce((acc, item) => product.price * product.qty, 0)
+              ).toLocaleString()}
+                </p>
+              </div>
             </div>
-            <div className="productTitleItems">
-              <h1>low fat product</h1>
-              <span>best to be taken in the morning</span>
-            </div>
-          </div>
-          <div className="productPrice">
-            <p>N5,000.00</p>
-          </div>
-        </div>
-        <hr className="lineDivider" />
-        <div className="productOrderContainer">
-          <div className="mainProduct">
-            <div className="productOrderitem">
-              <span className="productQuantity">1</span>
-              <img src={custard} alt="" className="productOrderimg" />
-            </div>
-            <div className="productTitleItems">
-              <h1>low fat product</h1>
-              <span>best to be taken in the morning</span>
-            </div>
-          </div>
-          <div className="productPrice">
-            <p>N5,000.00</p>
-          </div>
-        </div>
+          ))}
+
         <hr className="lineDivider" />
         <div className="subtotalContainer">
           <div className="subtotalItem">
-            <span>subtotal</span>
-            <p>N10,000.00</p>
-          </div>
-          <div className="subtotalItem">
-            <span>shiping</span>
-            <p>N1,000.00</p>
-          </div>
-          <hr className="lineDivider" />
-          <div className="subtotalItem">
-            <h1>total</h1>
-            <h1>N1,000.00</h1>
+            <h1>total:</h1>
+            <h1>  N{" "}
+              {Number(
+                item.reduce((acc, item) => acc + item.price * item.qty, 0)
+              ).toLocaleString()}</h1>
           </div>
         </div>
         <button className="placeOrderButton">place order</button>

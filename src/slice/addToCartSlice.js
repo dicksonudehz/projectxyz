@@ -1,41 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-localStorage.setItem("cartItem", 'item')
-  ? JSON.parse(localStorage.setItem("cartItem"))
+const getCartItem = localStorage.getItem("cart")
+  ? JSON.parse(localStorage.getItem("cart"))
   : [];
-  const cartItemFromStorage = localStorage.getItem("cartItem")
 
 const cartSlice = createSlice({
-  name: "CartAddItem",
+  name: "cart",
   initialState: {
-    cartItem: cartItemFromStorage,
+    cartItem: getCartItem,
     shippingAddress: {},
   },
+
   reducers: {
     addToCart: (state, action) => {
       const item = action.payload;
       const existingItem = state.cartItem.find(
-        (cartItem) => cartItem.id === item.id
+        (cartItem) => cartItem.product === item.product
       );
-
       if (existingItem) {
         existingItem.qty += item.qty;
-        existingItem.price += item.price
       } else {
-        state.cartItem.push({
-          name:item.name,
-          price:item.price,
-          quantity:item.quantity,
-          totalPrice:item.totalPrice
-        });
+        state.cartItem.push(item);
       }
+      // state.qty++;
     },
 
     removeItemFromCart: (state, action) => {
       const id = action.payload;
-      state.cartItem = state.cartItem.filter(
-        (cartItem) => cartItem.product !== id
-      );
+      const existingItem = state.cartItem.find((item) => item.id === id);
+      if(existingItem >= 1){
+        state.cartItem = state.cartItem.filter(
+          (cartItem) => cartItem.product !== id
+        );
+        state.qty--
+
+        console.log(state.qty--, 'this is the existing item from the remove from the cart')
+      }
+     
     },
 
     saveShippingAddress: (state, action) => {

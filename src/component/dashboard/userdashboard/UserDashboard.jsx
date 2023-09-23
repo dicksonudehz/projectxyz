@@ -17,7 +17,6 @@ import RecentlyViewed from "./RecentlyViewed";
 import SavedItems from "./SavedItems";
 import Voucher from "./Voucher";
 import MyOrders from "../MyOrders";
-
 import { useState } from "react";
 
 const UserDashboard = () => {
@@ -77,7 +76,12 @@ const UserDashboard = () => {
               <span className="useradminDashboardIcon">
                 <PlaylistAddIcon />
               </span>
-              <h className="useradminDashboardContentTitle" onClick={() => handleNavigation("recentlyViewed")}>recently viewed</h>
+              <h
+                className="useradminDashboardContentTitle"
+                onClick={() => handleNavigation("recentlyViewed")}
+              >
+                recently viewed
+              </h>
             </div>
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
@@ -118,7 +122,7 @@ const UserDashboard = () => {
           <CreateProduct />
           <DeleteProduct/>
           <AccountDetails /> */}
-          {activesection === 'myOrders' &&  <MyOrders /> }
+          {activesection === "myOrders" && <MyOrders />}
 
           {activesection === "voucher" && <Voucher />}
           {activesection === "savedItems" && <SavedItems />}

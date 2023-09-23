@@ -12,7 +12,7 @@ function BasicExample() {
         <Accordion.Item eventKey="0" className="accordianSingle">
           <Accordion.Header className="accordianHeader">
             <FlashlightOnIcon className="descArrow" />
-            <h1>body care</h1>
+            <h1>my body care</h1>
           </Accordion.Header>
           <Accordion.Body>
             <div className="accordianContent">

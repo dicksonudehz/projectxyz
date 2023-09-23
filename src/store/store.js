@@ -4,7 +4,7 @@ import fetchAllProductSlice from "../slice/fetchAllProductSlice";
 import createProductReducer from "../slice/createProductSlice";
 import registerReducer from "../slice/registerSlice";
 import loginReducer from "../slice/LoginSlice";
-import cartSlice from "../slice/addToCartSlice";
+import cartSliceReducer from "../slice/addToCartSlice";
 import singleProductSlice from "../slice/singleProductSlice";
 import relatedProductSlice from "../slice/relatedProductSlice";
 import newProductReducer from "../slice/newProductSlice";
@@ -17,7 +17,7 @@ const reducer = {
   createProduct: createProductReducer,
   register: registerReducer,
   login: loginReducer,
-  CartAddItem: cartSlice,
+  cart: cartSliceReducer,
   singleProduct: singleProductSlice,
   relatedProduct: relatedProductSlice,
   newProduct: newProductReducer,
@@ -35,7 +35,7 @@ const store = configureStore({
 
 store.subscribe(() => {
   const state = store.getState();
-  localStorage.setItem("cartItem", JSON.stringify(state.CartAddItem.cartItem));
+  localStorage.setItem("cart", JSON.stringify(state.cart.cartItem));
   localStorage.setItem("userInfo", JSON.stringify(state.login.data));
 });
 export default store;

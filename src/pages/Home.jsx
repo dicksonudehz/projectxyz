@@ -23,7 +23,7 @@ function Home() {
       <SalesProduct />
       <GreenProduct />
       <ProductReel />
-      <BestSeller/>
+      <BestSeller />
       {/* <AddToCart/> */}
     </>
   );

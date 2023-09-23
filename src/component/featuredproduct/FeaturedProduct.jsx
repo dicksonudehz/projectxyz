@@ -5,14 +5,15 @@ import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import malta from "../../images/malta.jpg";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../slice/addToCartSlice";
 import { topSixProduct } from "../../slice/topSixProductSlice";
-import { CartAddItem } from "../../slice/addToCartSlice";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { toast, ToastContainer } from "react-toastify";
 
-const FeaturedProduct = ({ name, price, quantity, totalPrice }) => {
+const FeaturedProduct = ({ id, name, price, quantity, totalPrice }) => {
   const dispatch = useDispatch();
 
   const {
@@ -21,12 +22,21 @@ const FeaturedProduct = ({ name, price, quantity, totalPrice }) => {
     error: pError,
   } = useSelector((state) => state.topSixProduct);
 
-  const addToCartItems = useSelector((state) => state.CartAddItem);
+  // const addToCartItems = useSelector((state) => state.addToCart);
+  // console.log(addToCartItems)
 
-
-  const handleAddToCart = () => {
-    dispatch(addToCartItems);
+  const handleAddToCart = (product) => {
+    const cartItem = {
+      name: product.name,
+      price: product.price,
+      product: product._id,
+      image: product.image[0],
+      qty: 1,
+    };
+    dispatch(addToCart(cartItem));
+    toast.success("Item added to cart successfully");
   };
+
   useEffect(() => {
     dispatch(topSixProduct());
   }, [dispatch]);
@@ -44,6 +54,7 @@ const FeaturedProduct = ({ name, price, quantity, totalPrice }) => {
   };
   return (
     <>
+      <ToastContainer />
       <div className="featureProductContainer">
         <div className="featuredProductContainerLeft">
           <div className="featuredProductContainerLeftTop">
@@ -106,7 +117,10 @@ const FeaturedProduct = ({ name, price, quantity, totalPrice }) => {
                       </div>
                       <div className="mainProInfoCon">
                         <img src={product.image} alt="" className="proImg" />
-                        <button className="addToCart" onClick={handleAddToCart}>
+                        <button
+                          className="addToCart"
+                          onClick={() => handleAddToCart(product)}
+                        >
                           add to cart
                         </button>
                         {/* <button className="addToCart">

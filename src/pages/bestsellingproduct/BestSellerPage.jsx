@@ -5,25 +5,18 @@ import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import bestseller from "../../images/bestseller.jpg";
-import { useDispatch, useSelector } from "react-redux";
-import { BestSellerProduct } from "../../slice/bestSellerProductSlice";
+
+import { bestSellingProduct } from "../../selector/Selector";
+import { useRecoilValue } from "recoil";
 
 const BestSeller = () => {
-  const dispatch = useDispatch();
+  const productData = useRecoilValue(bestSellingProduct);
+  console.log(productData, "this is the best selling product");
 
-  const { 
-    loading: BLoading,
-     data: BData,
-      error: BError } = useSelector(
-    (state) => state.BestSellerProduct
-  );
-
-  useEffect(() => {
-    dispatch(BestSellerProduct());
-  }, [dispatch]);
   return (
     <>
       <BreadcrumSlider />
+
       <div className="bestSellerContainer">
         <div className="bestSellerContainerLeft">
           <div className="bestSellerLeftItems">
@@ -57,31 +50,19 @@ const BestSeller = () => {
             </div>
           </div>
           <div className="bestSellerProductContainer">
-            {BLoading && <p>loading...</p>}
-            {BError && <p>There is an error...</p>}
-            {BData && BData.map((product, index) => {
-              return(
-                <>
-                <div className="bestSellsProdItemContainer" key={index}>
+           
+            <div className="bestSellsProdItemContainer">
               <SearchOutlinedIcon className="searchBestSellerIcon" />
-              <img src={product.image[0]} alt="" className="BestSellerProduct" />
+              <img src={bestseller} alt="" className="BestSellerProduct" />
               {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
                     </button> */}
               <div className="bestSellerProduct">
                 <button className="bestSellerAddtoCart">Add to cart </button>
-                <h1 className="bestSellerTittle">
-                  {product.name}
-                </h1>
-                <p className="bestSellerPrice">{product.price}</p>
+                <h1 className="bestSellerTittle">name</h1>
+                <p className="bestSellerPrice">price</p>
               </div>
             </div>
-                </>
-              )
-            })}
-            
-            
-            
           </div>
         </div>
       </div>

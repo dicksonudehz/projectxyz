@@ -36,11 +36,10 @@ export const createProduct = () => async (dispatch) => {
   try {
     dispatch(createProductRequest);
 
-    const { data } = await axios.get(
+    const { data } = await axios.post(
       `https://delightful-spacesuit-frog.cyclic.app/api/products`
     );
-    dispatch(createProductSuccess(data.products));
-    console.log(data);
+    dispatch(createProductSuccess(data.product));
   } catch (err) {
     const message =
       err.response && err.response.data.message

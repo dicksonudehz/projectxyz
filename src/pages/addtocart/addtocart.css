@@ -118,27 +118,22 @@
 .controlsContainer {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   gap: 15px;
+  align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 100px;
 }
 .soldOut{
-  padding: 10px 50px;
-  border-radius: 10px;
-  background-color: red;
-  color: white;
+  color: rgb(255, 0, 0);
   text-transform: capitalize;
-  font-size: 20px;
-  font-weight: 500;
-  border: none;
+  font-size: 10px;
+  padding-bottom: 5px;
 }
 .deleteContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
   gap: 10px;
   padding-left: 50px;
 }
@@ -150,26 +145,28 @@
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 400;
-  padding-top: 5px;
+}
+.incrementContainer{
+  margin-left: 10px;
 }
 .increementNav {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  
   gap: 10px;
 }
 .increementNav h1 {
-  background-color: rgb(185, 185, 185);
-  padding: 10px;
+
   color: rgb(70, 70, 70);
   font-weight: 600;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 25px;
 }
 .increementNav h3 {
   cursor: pointer;
-  font-size: 25px;
+  font-size: 14px;
 }
 .callCheckoutContainer {
   padding-left: 50px;
@@ -195,6 +192,7 @@
   cursor: pointer;
   margin-left: 20px;
 }
+
 .returnPolicy {
   padding-left: 50px;
   padding-top: 20px;
