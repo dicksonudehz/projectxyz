@@ -1,20 +1,27 @@
 import './inbox.css'
+import { useRecoilValue } from "recoil";
+import { inbox } from '../../../selector/Selector';
+
 const Inbox = () => {
+  const Messages = useRecoilValue(inbox);
+  console.log(Messages.data.issues, 'this are the message from the inbox ')
+  
   return (
     <>
       <div className="inboxContainer">
         <h1 className="inboxHeader">inbox inboxs</h1>
         <div className="inboxDetailsContainer">
-          <span className="inboxName">ogbudu dickson</span>
+          {Messages && Messages.data.issues.map((issue, index) => {
+            return(
+              <>
+               <span className="inboxName">{issue.title}</span>
           <p className="inboxDetails">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-            <br />
-            aperiam minima nulla rerum, explicabo ipsa in porro? Est dolore sint
-            <br />
-            maxime quos, accusantium qui cum omnis exercitationem eum similique
-            <br />
-            in.
+          {issue.description}
           </p>
+              </>
+            )
+          })}
+         
         </div>
       </div>
     </>

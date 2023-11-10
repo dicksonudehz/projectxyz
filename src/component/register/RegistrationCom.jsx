@@ -1,68 +1,76 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import BreadcrumSlider from "../breadcrumslider/BreadcrumSlider";
 import "./registerone.css";
 import axios from "axios";
-import { ToastContainer, toast} from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function RegistrationCom() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
+  const [data, setData] = useState("email");
+
+  const emailExisting = (email) => {
+    const existingUser = JSON.parse(localStorage.getItem("users")) || [];
+    return existingUser.some((user) => user.email === email);
+    console.log(existingUser, 'this is the existing user email ')
+  };
 
   const handleReg = async (e) => {
     e.preventDefault();
+
     if (!name || !email || !password || !address) {
-      toast.error('all the field must be filled')
-      console.log("all field must be filled");
+      toast.error("all the field must be filled");
     } else {
       try {
         const res = await axios.post(
-          `https://delightful-spacesuit-frog.cyclic.app/api/users/register`,
+          `https://calm-gold-dugong-gown.cyclic.app/api/users/register/`,
           {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name: name,
-              email: email,
-              password: password,
-              address: address,
-            }),
+            name: name,
+            email: email,
+            password: password,
+            address: address,
           }
         );
 
-        if (!res.ok) {
-          throw new Error("Registration failed");
-        } else {
-          toast.success('registration is successful')
+        if(emailExisting(email)){
+          toast.error('email already exist ')
+       
 
+          return
         }
-
-        const data = await res.json();
-        console.log("User registered:", data);
+          toast.success("registration is successful");
+          navigate('/loginpage')
+          localStorage.setItem("name", JSON.stringify(name));
+          localStorage.setItem("email", JSON.stringify(email));
+        
+        
       } catch (error) {
         console.log("error in registration", error);
       }
+
+      setName("");
+      setEmail("");
+      setPassword("");
+      setAddress("");
     }
-    setName("");
-    setEmail("");
-    setPassword("");
-    setAddress("");
   };
+
 
   return (
     <>
       <BreadcrumSlider />
       <div className="register">
-      <ToastContainer />
+        <ToastContainer />
         <div className="loginWrapper">
           <div className="logingLeft">
-            <h3 className="loginLogo">Dicksonsocials</h3>
+            <h3 className="loginLogo">Shop Here</h3>
             <span className="loginDesc">
-              connect with friends and family on dicksonsocials
+              shop all household items on our store with ease and affordability
             </span>
           </div>
           <div className="loginRightRegistration">

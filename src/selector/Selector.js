@@ -16,12 +16,51 @@ try{
     }
 })
 
-
-export const bestSellingProduct = selector({
+export const bestSellingProduct = selector({  
     key: 'bestSellingProduct',
     get: async () => {
         try{
-            const res = await axios.get(`https://delightful-spacesuit-frog.cyclic.app/api/products/best`)
+            const res = await axios.get(`https://delightful-spacesuit-frog.cyclic.app/api/products/top-six-new-products`)
+            return res.data
+        }catch(error){
+            console.log(`error:\n${error}`)
+    return []
+        }
+    }
+})
+
+export const featuredProduct = selector({  
+    key: 'featuredProduct',
+    get: async () => {
+        try{
+            const res = await axios.get(`https://calm-gold-dugong-gown.cyclic.app/api/products/featured`)
+            return res
+        }catch(error){
+            console.log(`error:\n${error}`)
+    return []
+        }
+    }
+})
+
+export const inbox = selector({  
+    key: 'inbox',
+    get: async () => {
+        try{
+            const res = await axios.get(`https://calm-gold-dugong-gown.cyclic.app/api/issues/getAllIssues`)
+            return res
+        }catch(error){
+            console.log(`error:\n${error}`)
+    return []
+        }
+    }
+})
+
+export const singleProductData = selector({
+    
+    key: 'singleProductData',
+    get: async () => {
+        try{
+            const res = await axios.get(`https://calm-gold-dugong-gown.cyclic.app/api/products`)
             return res.data
         }catch(error){
             console.log(`error:\n${error}`)

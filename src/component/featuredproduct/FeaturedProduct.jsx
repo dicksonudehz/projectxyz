@@ -15,15 +15,13 @@ import { toast, ToastContainer } from "react-toastify";
 
 const FeaturedProduct = ({ id, name, price, quantity, totalPrice }) => {
   const dispatch = useDispatch();
+  
 
   const {
     loading: pLoading,
     data: pData,
     error: pError,
   } = useSelector((state) => state.topSixProduct);
-
-  // const addToCartItems = useSelector((state) => state.addToCart);
-  // console.log(addToCartItems)
 
   const handleAddToCart = (product) => {
     const cartItem = {
@@ -37,6 +35,8 @@ const FeaturedProduct = ({ id, name, price, quantity, totalPrice }) => {
     toast.success("Item added to cart successfully");
   };
 
+const handleSingleProduct = (product) =>{
+}
   useEffect(() => {
     dispatch(topSixProduct());
   }, [dispatch]);
@@ -107,16 +107,17 @@ const FeaturedProduct = ({ id, name, price, quantity, totalPrice }) => {
           </div>
           <div className="featuredProConBottom">
             {pData &&
-              pData.map((product, index) => {
+              pData.product.map((product, index) => {
                 return (
                   <>
                     <div className="mainProContainer" key={index}>
-                      {/* <Link to={`/singleproduct/${product._id}`}> */}
                       <div className="mainProIcons">
                         <SearchOutlinedIcon className="mainProIcon" />
                       </div>
                       <div className="mainProInfoCon">
+                      <Link to={`/singleproduct/${product._id}` } >
                         <img src={product.image} alt="" className="proImg" />
+                        </Link>
                         <button
                           className="addToCart"
                           onClick={() => handleAddToCart(product)}

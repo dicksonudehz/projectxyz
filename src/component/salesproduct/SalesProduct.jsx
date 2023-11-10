@@ -61,7 +61,7 @@ const SalesProduct = () => {
             {tLoading && <p>loading...</p>}
             {tError && <p>Error....</p>}
 
-            {tData && tData.map((product, index) => {
+            {tData && tData.product.map((product, index) => {
               return (
                 <>
                   <div className="saleProConLeftBottom" key={index}>

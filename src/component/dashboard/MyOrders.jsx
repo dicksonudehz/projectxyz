@@ -7,8 +7,6 @@ const MyOrders = () => {
   const dispatch = useDispatch();
   const item = useSelector((state) => state.cart.cartItem);
 
-  console.log(item)
-
   return (
     <>
       <div className="orderContainer">

@@ -39,8 +39,8 @@ export const topSixProduct = () => async (dispatch) => {
   try {
     dispatch(topSixProductRequest);
 
-    const { data } = await axios.get(`https://delightful-spacesuit-frog.cyclic.app/api/products/top-six-new-products`);
-    dispatch(topSixProductSuccess(data.products));
+    const { data } = await axios.get(`https://calm-gold-dugong-gown.cyclic.app/api/products/featured`);
+    dispatch(topSixProductSuccess(data));
   } catch (err) {
     const message =
       err.response && err.response.data.message

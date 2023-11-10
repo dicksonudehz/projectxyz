@@ -35,7 +35,7 @@ export const singleProduct = (id) => async (dispatch) => {
   try {
     dispatch(singleProductRequest());
     const { data } = await axios.get(
-      `https://delightful-spacesuit-frog.cyclic.app/api/products/64b2c489eb73887bfe6eed4a${id}`
+      `https://delightful-spacesuit-frog.cyclic.app/api/products/${id}`
     );
     dispatch(singleProductSuccess(data.products));
     console.log("this is the test of a lifetime")

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./singleproduct.css";
 import BreadcrumSlider from "../../component/breadcrumslider/BreadcrumSlider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -9,17 +9,46 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RelatedProducts from "../../component/relatedproduct/RelatedProducts";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
-import { useState } from "react";
 // import custard from "../../images/custard.jpg";
 import { addToCart } from "../../slice/addToCartSlice";
 import { singleProduct } from "../../slice/singleProductSlice";
 import { relatedProduct } from "../../slice/relatedProductSlice";
+import axios from "axios";
 
 const SingleProduct = () => {
+  const [data, setData] = useState(null);
+
   const dispatch = useDispatch();
   const params = useParams();
 
   const [qty, setQty] = useState(2);
+
+  
+
+  useEffect(() => {
+    const fetchSingleProd = async () => {
+      const res = await axios.get(
+        `https://calm-gold-dugong-gown.cyclic.app/api/products/${params.id}`
+      );
+      const product = res.data;
+      setData(product);
+      console.log(product, 'this is the product from the api')
+
+      return res.data;
+    };
+    fetchSingleProd();
+  }, []);
+
+  const singleProAddToCart = () => {
+    const product = {
+      name: product.name,
+      price: product.price,
+      product: product._id,
+      image: product.image[0],
+      qty: 1,
+    };
+    setData([...data, product])
+   };
 
   const {
     loading: sLoading,
@@ -70,78 +99,66 @@ const SingleProduct = () => {
         </div>
         <div className="productContentContainer">
           <div className="productContentContainerLeftItems">
-            {sLoading && <p>Loading...</p>}
-            {sError && <p>Error...</p>}
-            {sData &&
-              sData.map((product, index) => {
-                return (
-                  <>
-                    <div className="productContentContainerLeft" key={index}>
-                      <div className="productContentItems">
-                        <div className="productImageDesc">
-                          <img
-                            src={product.image[0]}
-                            alt=""
-                            className="productMainImage"
-                          />
-                          <div className="featureImageDesc">
-                            <div className="productImageDescContainer">
-                              <ArrowBackIosIcon />
+            {data && (
+              <div className="productContentContainerLeft">
+                <div className="productContentItems">
+                  <div className="productImageDesc">
+                    <img
+                      src={data.product.image}
+                      alt=""
+                      className="productMainImage"
+                    />
+                    <div className="featureImageDesc">
+                      <div className="productImageDescContainer">
+                        <ArrowBackIosIcon />
 
-                              <ArrowForwardIosIcon />
-                            </div>
-                          </div>
-
-                          <div className="shareProductSocials">
-                            <h1>share this product </h1>
-                            <div className="socialMediaIcon">
-                              <FacebookIcon className="singleProductSocials1" />
-                              <InstagramIcon className="singleProductSocials" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="productDescContent">
-                        <div className="prodDescTitle">
-                          <h1 className="officalStore">Official Store</h1>
-                          <h1 className="officialAniversiry">
-                            Anniversary deal
-                          </h1>
-                          <FavoriteBorderIcon className="prodDescIcon" />
-                        </div>
-                        <div className="productTitleDesc">
-                          <p>
-                            {" "}
-                           {product.description}
-                          </p>
-                        </div>
-                        <p className="productDescName">
-                          <b>Brand:</b> {product.description}
-                        </p>
-                        <h1 className="productDescPrice">N{product.price}</h1>
-                        <p className="inStock">in stock</p>
-                        <p className="productShippingDetails">
-                          + shipping from ₦ 250 to LEKKI-AJAH (SANGOTEDO)
-                        </p>
-                        <div
-                          className="productAddToCart"
-                          onClick={() => HandleAddToCart()}
-                        >
-                          add to cart
-                        </div>
-                        <div className="productPromoDetails">
-                          <h1 className="promoTitles">PROMOTIONS</h1>
-                          <p>
-                            Need extra money? Loan up to N500,000 on the
-                            JumiaPay Android app.
-                          </p>
-                     
-                        </div>
+                        <ArrowForwardIosIcon />
                       </div>
                     </div>
-                  </>
-                );
-              })}
+
+                    <div className="shareProductSocials">
+                      <h1>share this product </h1>
+                      <div className="socialMediaIcon">
+                        <FacebookIcon className="singleProductSocials1" />
+                        <InstagramIcon className="singleProductSocials" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="productDescContent">
+                  <div className="prodDescTitle">
+                    <h1 className="officalStore">Official Store</h1>
+                    <h1 className="officialAniversiry">Anniversary deal</h1>
+                    <FavoriteBorderIcon className="prodDescIcon" />
+                  </div>
+                  <div className="productTitleDesc">
+                    <p> </p>
+                  </div>
+                  <p className="productDescName">
+                    <b>Brand:</b> description
+                  </p>
+                  <h1 className="productDescPrice">N{data.product.price} </h1>
+                  <p className="inStock">{data.product.name}</p>
+                  <p className="productShippingDetails">
+                    + shipping from ₦ 250 to LEKKI-AJAH (SANGOTEDO)
+                  </p>
+                  <div
+                    className="productAddToCart"
+                    onClick={() => singleProAddToCart(data)}
+                  >
+                    add to cart
+                  </div>
+                  <div className="productPromoDetails">
+                    <h1 className="promoTitles">PROMOTIONS</h1>
+                    <p>
+                      Need extra money? Loan up to N500,000 on the JumiaPay
+                      Android app.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="relatedProduct">
               <RelatedProducts />
             </div>

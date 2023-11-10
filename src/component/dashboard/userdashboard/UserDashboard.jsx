@@ -25,7 +25,7 @@ const UserDashboard = () => {
   const handleNavigation = (section) => {
     setActiveSection(section);
   };
-
+  const productName = localStorage.getItem("name");
   return (
     <>
       <BreadcrumSlider />
@@ -34,7 +34,7 @@ const UserDashboard = () => {
           <div className="useradminDdashboardUser">
             <img src={myprofile} alt="" className="useradminprofilePics" />
             <h1 className="useradminmyprofileDetails">
-              welcome: <b>john doe</b>
+              welcome: <b>{productName}</b>
             </h1>
           </div>
           <div className="useradminDashboardItems">
@@ -97,13 +97,13 @@ const UserDashboard = () => {
 
             <div className="useradminDashboardContent">
               <span className="useradminDashboardIcon">
-                <EmailIcon />
+                <LogoutIcon />
               </span>
               <h
                 className="useradminDashboardContentTitle"
                 onClick={() => handleNavigation("voucher")}
               >
-                voucher
+                logout
               </h>
             </div>
           </div>

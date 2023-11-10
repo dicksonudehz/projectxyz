@@ -5,14 +5,14 @@ import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import bestseller from "../../images/bestseller.jpg";
-
 import { bestSellingProduct } from "../../selector/Selector";
 import { useRecoilValue } from "recoil";
+import { Link } from "react-router-dom";
 
 const BestSeller = () => {
   const productData = useRecoilValue(bestSellingProduct);
-  console.log(productData, "this is the best selling product");
-
+ 
+ 
   return (
     <>
       <BreadcrumSlider />
@@ -50,19 +50,35 @@ const BestSeller = () => {
             </div>
           </div>
           <div className="bestSellerProductContainer">
-           
-            <div className="bestSellsProdItemContainer">
-              <SearchOutlinedIcon className="searchBestSellerIcon" />
-              <img src={bestseller} alt="" className="BestSellerProduct" />
-              {/* <button className="addToCart">
+            {productData &&
+              productData.products.map((product, index) => {
+                return (
+                  <>
+                    <div className="bestSellsProdItemContainer">
+                      <SearchOutlinedIcon className="searchBestSellerIcon" />
+                      <Link
+                        to={`/singleproduct/${product._id}`}
+                      >
+                        <img
+                          src={product.image[0]}
+                          alt=""
+                          className="BestSellerProduct"
+                        />
+                      </Link>
+                      {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
                     </button> */}
-              <div className="bestSellerProduct">
-                <button className="bestSellerAddtoCart">Add to cart </button>
-                <h1 className="bestSellerTittle">name</h1>
-                <p className="bestSellerPrice">price</p>
-              </div>
-            </div>
+                      <div className="bestSellerProduct">
+                        <button className="bestSellerAddtoCart">
+                          Add to cart{" "}
+                        </button>
+                        <h1 className="bestSellerTittle">{product.name}</h1>
+                        <p className="bestSellerPrice">{product.price}</p>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
           </div>
         </div>
       </div>

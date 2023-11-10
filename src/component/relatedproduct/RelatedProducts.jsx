@@ -4,15 +4,30 @@ import { previewProductData } from "../../pages/expressorder/productData";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SingleProduct from "../../pages/singleproduct/SingleProduct";
+import { addToCart } from "../../slice/addToCartSlice";
+import { toast, ToastContainer } from "react-toastify";
 
-const RelatedProducts = () => {
-  const distpatch = useDispatch();
+
+const RelatedProducts = ({ id, name, price, quantity, totalPrice }) => {
+  const dispatch = useDispatch();
 
   const {
     loading: rLoading,
     data: rData,
     error: rError,
   } = useSelector((state) => state.relatedProduct);
+  
+  const handleAddToCart = (product) => {
+    const cartItem = {
+      name: product.name,
+      price: product.price,
+      product: product._id,
+      image: product.image[0],
+      qty: 1,
+    };
+    dispatch(addToCart(cartItem));
+    toast.success("Item added to cart successfully");
+  };
 
   return (
     <>
@@ -30,8 +45,7 @@ const RelatedProducts = () => {
                 return (
                   <>
                     <div className="relatedProductContainer">
-                      <Link
-                        to={`/singleProduct/${product._id}`}
+                    <Link to={`/singleproduct/${product._id}` } 
                         className="text-decoration-none"
                       >
                         <img
@@ -39,7 +53,7 @@ const RelatedProducts = () => {
                           alt=""
                           className="relatedProdImage"
                         />
-                        <button className="addToCart">add to cart</button>
+                        <button className="addToCart" onClick={() => handleAddToCart(product)}>add to cart</button>
                         {/* <button className="addToCart">
                           <ShoppingCartOutlinedIcon />
                         </button> */}

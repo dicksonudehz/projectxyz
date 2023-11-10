@@ -5,15 +5,21 @@ import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./topbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import { useSelector } from "react-redux";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { HashLink as Links } from "react-router-hash-link";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 function Topbar({ name, ...props }) {
+ 
+  const navigate = useNavigate();
+
   const cartItem = useSelector((state) => state.cart.cartItem);
+  const [data, setData] = useState("my account ");
 
   const [show, setShow] = useState(false);
 
@@ -46,6 +52,22 @@ function Topbar({ name, ...props }) {
       document.removeEventListener("mousedown", handler);
     };
   });
+  const productName = localStorage.getItem("name");
+  const logout = async () => {
+    try {
+      const res = await axios.post(
+        `https://calm-gold-dugong-gown.cyclic.app/api/users/logout/`
+      );
+      if (res) {
+        localStorage.clear();
+        console.log("logout successfully");
+        toast.success("logout successfully");
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="containerBox">
@@ -72,9 +94,9 @@ function Topbar({ name, ...props }) {
                 </div>
               </Link>
             </div>
-            <div className="loginRegister" >
+            <div className="loginRegister">
               <h4>
-            <Link to="/loginpage">register/Login</Link>
+                <Link to="/loginpage">Need a Help?</Link>
               </h4>
               {/* <h4>login/Register </h4> */}
             </div>
@@ -108,7 +130,6 @@ function Topbar({ name, ...props }) {
                     </button> */}
                     </div>
                   </Offcanvas.Body>
-
 
                   {/* {showToogle ? <Login /> : <Register name={name} />} */}
                 </div>
@@ -172,34 +193,45 @@ function Topbar({ name, ...props }) {
                 <li>
                   <Link to="/singleproduct">single Product</Link>
                 </li>
-                {/* <li>
-                  <Link to="/loginpage">register/Login</Link>
-                </li> */}
               </ul>
             </div>
+
+            {/* this is the beginning of the dropdown menu  */}
             <div className="rightBottomLeft">
               <div className="openToogle" onClick={handleRightSideOpen}>
-                <span className="deliveryDate">
-                  <PersonOutlineOutlinedIcon /> Hi, {name}
-                </span>
+                {productName ? (
+                  <span className="deliveryDate">Hi, {productName} </span>
+                ) : (
+                  <span className="deliveryDate">my account </span>
+                )}
               </div>
               <div
                 className={`acountDetailsDropDownItems ${
                   rightSidebar ? "activestate" : "inactive"
                 }`}
               >
-                <ul>
-                  <li>
-                    <Links to="/userdashboard">My Account</Links>
-                  </li>
-                  <li>
-                    <Links to="/admindashboard">admin dashboard</Links>
-                  </li>
-                  <li>Orders</li>
-                  <li>inbox</li>
-                  <li>voucher</li>
-                  <li>logout</li>
-                </ul>
+                {productName ? (
+                  <ul>
+                    <Links to="/userdashboard">User Dashboard</Links>
+                    <li>Report and Issue</li>
+                    <li onClick={logout}>logout</li>
+                  </ul>
+                ) : (
+                  <div className="secondOptio">
+                    <ul>
+                      <li>
+                        <Links to="/loginpage" >Sign in</Links>
+                      </li>
+                      <li>
+                        <Links to="/userdashboard">my account </Links>
+                      </li>
+                      <li>Orders</li>
+                      <li>save items</li>
+                      <li>voucher</li>
+                      <li>logout</li>
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>

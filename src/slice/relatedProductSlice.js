@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const relatedProductSlice = createSlice({
+
   name: "relatedProduct",
   initialState: {
     loading: false,
@@ -36,11 +38,9 @@ export const {
 export const relatedProduct = (id) => async (dispatch) => {
   try {
     dispatch(relatedProductRequest());
-
     const { data } = await axios.get(
-      `https://delightful-spacesuit-frog.cyclic.app/api/products/64b2c5b8eb73887bfe6eed4e/related`
+      `https://calm-gold-dugong-gown.cyclic.app/api/products/${id}/related`
     );
-
     dispatch(relatedProductSuccess(data.actual));
   } catch (err) {
     const message =

@@ -1,6 +1,21 @@
+import { useEffect, useState } from 'react';
 import './userdetails.css'
 
 const UserDetails = () => {
+  const [data, setData] = useState('my account ');
+  const [email, setEmail] = useState('my account ');
+    useEffect(() => {
+    const regData = localStorage.getItem("name");
+    setData(regData ? JSON.parse(regData) : null); 
+
+    const regEmail = localStorage.getItem("email")
+    setEmail(regEmail ? JSON.parse(regEmail) :null)
+  }, []);
+
+
+  const productName = localStorage.getItem("name");
+  const productEmail = localStorage.getItem("email");
+
   return (
     <>
      <div className="userDetailContainer" id="userdashboard">
@@ -11,8 +26,8 @@ const UserDetails = () => {
               <h4 className="accountDetailsHeader">account details</h4>
               <hr />
               <div className="accountDetailsInfo">
-                <p className="accountDetailName">ogbudu dickson</p>
-                <p className="accountDetailEmail">dicksonudehz@gmail.com</p>
+                <p className="accountDetailName">{data}</p>
+                <p className="accountDetailEmail">{email}</p>
               </div>
             </div>
             <span className="companyName">
