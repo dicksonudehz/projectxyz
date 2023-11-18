@@ -5,7 +5,6 @@ import "./updateproduct.css";
 
 const UpdateProduct = () => {
   const dispatch = useDispatch();
-
   const {
     loading: ULoading,
     data: UData,

@@ -210,20 +210,20 @@ function Topbar({ name, ...props }) {
                   rightSidebar ? "activestate" : "inactive"
                 }`}
               >
-                {productName ? (
+                {/* {productName ? ( */}
                   <ul>
-                    <Links to="/userdashboard">User Dashboard</Links>
+                    <Links to="/admindashboard">My Dashboard</Links>
                     <li>Report and Issue</li>
                     <li onClick={logout}>logout</li>
                   </ul>
-                ) : (
+                {/* ) : ( */}
                   <div className="secondOptio">
                     <ul>
                       <li>
                         <Links to="/loginpage" >Sign in</Links>
                       </li>
                       <li>
-                        <Links to="/userdashboard">my account </Links>
+                        <Links to="/admindashboard">my account </Links>
                       </li>
                       <li>Orders</li>
                       <li>save items</li>
@@ -231,7 +231,7 @@ function Topbar({ name, ...props }) {
                       <li>logout</li>
                     </ul>
                   </div>
-                )}
+                {/* )} */}
               </div>
             </div>
           </div>

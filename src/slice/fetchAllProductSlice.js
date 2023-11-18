@@ -39,7 +39,8 @@ export const fetchAllProduct = () => async (dispatch) => {
   try {
     dispatch(fetchAllProductRequest);
 
-    const { data } = await axios.get(`https://delightful-spacesuit-frog.cyclic.app/api/products`);
+    const { data } = await axios.get(`https://calm-gold-dugong-gown.cyclic.app/api/api/products/`);
+   
     dispatch(fetchAllProductSuccess(data.product));
   } catch (err) {
     const message =

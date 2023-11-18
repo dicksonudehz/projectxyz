@@ -14,11 +14,11 @@ function RegistrationCom() {
   const [address, setAddress] = useState("");
   const [data, setData] = useState("email");
 
-  const emailExisting = (email) => {
-    const existingUser = JSON.parse(localStorage.getItem("users")) || [];
-    return existingUser.some((user) => user.email === email);
-    console.log(existingUser, 'this is the existing user email ')
-  };
+  // const emailExisting = (email) => {
+  //   const existingUser = JSON.parse(localStorage.getItem("users")) || [];
+  //   return existingUser.some((user) => user.email === email);
+  //   console.log(existingUser, 'this is the existing user email ')
+  // };
 
   const handleReg = async (e) => {
     e.preventDefault();
@@ -36,19 +36,9 @@ function RegistrationCom() {
             address: address,
           }
         );
-
-        if(emailExisting(email)){
-          toast.error('email already exist ')
-       
-
-          return
-        }
-          toast.success("registration is successful");
-          navigate('/loginpage')
-          localStorage.setItem("name", JSON.stringify(name));
-          localStorage.setItem("email", JSON.stringify(email));
-        
-        
+        // const data = localStorage.setItem("email");
+        toast.success("registration is successful");
+        navigate("/loginpage");
       } catch (error) {
         console.log("error in registration", error);
       }
@@ -59,7 +49,6 @@ function RegistrationCom() {
       setAddress("");
     }
   };
-
 
   return (
     <>

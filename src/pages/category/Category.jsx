@@ -9,20 +9,12 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import retail from "../../images/retail.jpg";
 import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { productQuery } from "../../selector/Selector";
+import { useRecoilValue } from "recoil";
 
 const Category = () => {
-  const Dispatch = useDispatch();
-  // const Selector = useSelector()
-
-  const {
-    loading: cloading,
-    data: cdata,
-    error: cerror,
-  } = useSelector((state) => state.fetchAllProduct);
-
-  useEffect(() => {
-    Dispatch(fetchAllProduct());
-  }, [Dispatch]);
+  const apiData = useRecoilValue(productQuery);
+  console.log(apiData, 'this is the data on the browse store page')
 
   return (
     <>
@@ -84,34 +76,24 @@ const Category = () => {
           </div>
         </div>
         <div className="categoryProductContainerBottom">
-          {cloading && <p>loading</p>}
-          {cerror && <p>error</p>}
-          {cdata && cdata.map((product, index) => {
+         
+          {apiData.product.map((product, index) => {
             return(
               <>
               <div className="categoryproductItem">
             <SearchOutlinedIcon className="searchCategoryIcon" />
             <img src={product.image} alt="" className="productItemImg" />
-            {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
             <div className="categoryProd">
               <button className="categoryAddtoCart">Add to cart </button>
               <h1 className="categoryCardTitle">
-              {product.name}
+             {product.name}
               </h1>
-              <p className="categoryProductPrice">N{product.price}</p>
+              <p className="categoryProductPrice">{product.price}</p>
             </div>
           </div>
               </>
             )
           })}
-          
-          
-          
-          
-          
-          
         </div>
       </div>
     </>

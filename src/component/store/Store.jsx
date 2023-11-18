@@ -7,6 +7,7 @@ import "./store.css";
 
 function Store() {
   const apiData = useRecoilValue(productQuery);
+
   return (
     <>
       <BreadcrumSlider />
