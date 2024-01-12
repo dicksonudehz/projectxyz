@@ -27,13 +27,14 @@ const CreateProduct = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formData = new FormData();
     Object.keys(productData).forEach((key) => {
       formData.append(key, productData[key]);
     });
+
     try {
-      const formData = new FormData();
+      // const formData = new FormData();
 
       const res = await axios.post(
         `https://calm-gold-dugong-gown.cyclic.app/api/products`,
@@ -42,7 +43,6 @@ const CreateProduct = () => {
         }
       );
       toast.success("product created successfully");
-      console.log(res.data, "this data are coming from creating product data");
     } catch (error) {
       console.log(error, "product cannot be created successfully");
     }
@@ -154,7 +154,11 @@ const CreateProduct = () => {
               className="createProductFile"
               onChange={({ target }) => handleChange(target.value, target.name)}
             />
-            <button className="createProduct" type="submit">
+            <button
+              className="createProduct"
+              type="submit"
+              onClick={handleSubmit}
+            >
               create a product
             </button>
           </div>

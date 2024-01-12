@@ -28,7 +28,7 @@ function RegistrationCom() {
     } else {
       try {
         const res = await axios.post(
-          `https://calm-gold-dugong-gown.cyclic.app/api/users/register/`,
+          `https://calm-gold-dugong-gown.cyclic.app/api/ecommerce/admin/admin-register`,
           {
             name: name,
             email: email,
@@ -70,24 +70,28 @@ function RegistrationCom() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="name"
                   className="loginInput"
+                  autoComplete="name"
                 />
                 <input
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                   className="loginInput"
+                  autoComplete="email"
                 />
                 <input
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                   className="loginInput"
+                  autoComplete="Password"
                 />
                 <input
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   placeholder="your address here"
                   className="loginInput"
+                  autoComplete="address"
                 />
                 <button className="loginButton" type="submit">
                   sign up

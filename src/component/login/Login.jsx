@@ -16,40 +16,29 @@ export default function Login() {
       toast.error("all the field must be filled");
     } else {
       try {
-        const config = 
-        {
-          headers:{
-            'Content-Type':'application/JSON',
-            ...(res.token ? {'Authorization':res?.token  && `Bearer ${res?.token}` } : {})
-          }
-        }
         const res = await axios.post(
-          `https://calm-gold-dugong-gown.cyclic.app/api/users/login/`,
+          `https://calm-gold-dugong-gown.cyclic.app/api/ecommerce/admin/admin-login`,
+
           {
             email: email,
             password: password,
-          },
-          config
-
+          }
         );
-       
+
+        console.log("this is the token", res.data.token);
 
         toast.success("login successfully");
         navigate("/");
 
-
         setEmail("");
         setPassword("");
-        console.log(res, "this is the response value");
-
       } catch (error) {
-        console.log("login failed", error);
+        console.error("login failed", error);
       }
     }
   };
   const productName = localStorage.getItem("name");
 
-  console.log(productName, "this is the product name from the local storage");
   return (
     <>
       <BreadcrumSlider />
@@ -69,12 +58,14 @@ export default function Login() {
                 className="loginInput"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
               />
               <input
                 placeholder="Password"
                 className="loginInput"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="Password"
               />
               <button className="loginButton">login here</button>
 

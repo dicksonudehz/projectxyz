@@ -4,6 +4,8 @@ import pic1 from "../../banner/pic1.jpg";
 import pic2 from "../../banner/pic2.jpg";
 import pic3 from "../../banner/pic3.jpg";
 import "./slider.css";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default class SimpleSlider extends Component {
   render() {

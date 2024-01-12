@@ -17,6 +17,8 @@ import CheckoutPage from "./pages/checkoutpage/CheckoutPage";
 import Store from "./component/store/Store";
 import RegistrationCom from "./component/register/RegistrationCom";
 import Login from "./component/login/Login";
+import AdminLogin from "./component/adminLogin/adminLogin";
+import AdminRegister from "./component/adminRegister/adminRegister";
 
 function App() {
   return (
@@ -31,7 +33,9 @@ function App() {
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/loginpage" element={<Login />} />
+          <Route path="/AdminLogin" element={<AdminLogin/>}/>
           <Route path="/registerone" element={<RegistrationCom />} />
+          <Route path="/AdminRegister" element={<AdminRegister />} />
           <Route path="/userdashboard" element={<UserDashboard />} />
           <Route path="/checkoutpage" element={<CheckoutPage />} />
           <Route path="/store" element={<Store />} />

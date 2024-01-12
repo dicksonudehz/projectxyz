@@ -51,7 +51,7 @@ function Topbar({ name, ...props }) {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, []);
   const productName = localStorage.getItem("name");
   const logout = async () => {
     try {
@@ -68,6 +68,7 @@ function Topbar({ name, ...props }) {
       console.log(error);
     }
   };
+
   return (
     <>
       <div className="containerBox">
@@ -193,6 +194,7 @@ function Topbar({ name, ...props }) {
                 <li>
                   <Link to="/singleproduct">single Product</Link>
                 </li>
+               
               </ul>
             </div>
 
@@ -220,7 +222,13 @@ function Topbar({ name, ...props }) {
                   <div className="secondOptio">
                     <ul>
                       <li>
-                        <Links to="/loginpage" >Sign in</Links>
+                        <Links to="/loginpage" >login</Links>
+                      </li>
+                      <li>
+                        <Links to="/AdminLogin" >admin login</Links>
+                      </li>
+                      <li>
+                        <Links to="/AdminRegister" >admin register</Links>
                       </li>
                       <li>
                         <Links to="/admindashboard">my account </Links>

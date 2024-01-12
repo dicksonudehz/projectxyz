@@ -1,0 +1,92 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminRegLoginWrapper{
+    display: flex;
+    height: 70%;
+    width: 70%;
+}
+.adminRegLogingLeft,.adminRegLoginRightRegistration{
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+.adminRegLoginLogo{
+    font-weight: 800;
+    font-size: 50px;
+    color: #1775ee;
+    margin-bottom: 10px;
+    margin-top: 150px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.adminRegLoginDesc{
+    font-size: 25px;
+    text-transform: capitalize;
+    text-align: center;
+    justify-content: center;
+}
+.adminRegLoginRightRegistration{
+    height: 500px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.adminRegLoginBoxContainer{
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.adminRegLoginInput{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: 16px;
+    padding-left: 20px;
+}
+.adminRegLoginInput:focus{
+    outline: none;
+}
+.adminRegLoginButton{
+    height: 50px;
+    background-color: #1775ee;;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+}
+.adminRegLoginForgot{
+    color: #1775ee;
+    text-align: center;
+}
+.adminRegLoginRegisterButton{
+    width: 50%;
+    align-self: center;
+    height: 50px;
+    background-color: #42b72a;;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer; 
+}
